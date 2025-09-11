@@ -1,0 +1,3110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="URL Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="pbqa" elementType="Argument">
+            <stringProp name="Argument.name">pbqa</stringProp>
+            <stringProp name="Argument.value">mseva-qa.lgpunjab.gov.in</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pbuat" elementType="Argument">
+            <stringProp name="Argument.name">pbuat</stringProp>
+            <stringProp name="Argument.value">mseva-uat.lgpunjab.gov.in</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pbprod" elementType="Argument">
+            <stringProp name="Argument.name">pbprod</stringProp>
+            <stringProp name="Argument.value">mseva.lgpunjab.gov.in</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="qa" elementType="Argument">
+            <stringProp name="Argument.name">qa</stringProp>
+            <stringProp name="Argument.value">qa.digit.org</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="uat" elementType="Argument">
+            <stringProp name="Argument.name">uat</stringProp>
+            <stringProp name="Argument.value">uat.digit.org</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="PBUATtradeType" elementType="Argument">
+            <stringProp name="Argument.name">PBUATtradeType</stringProp>
+            <stringProp name="Argument.value">GOODS.SALESTORAGE.TST-4</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PBQAtradeType" elementType="Argument">
+            <stringProp name="Argument.name">PBQAtradeType</stringProp>
+            <stringProp name="Argument.value">GOODS.SALESTORAGE.TST-131</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="password" elementType="Argument">
+            <stringProp name="Argument.name">password</stringProp>
+            <stringProp name="Argument.value">eGov@123</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="---------------------------------------------------------------" elementType="Argument">
+            <stringProp name="Argument.name">---------------------------------------------------------------</stringProp>
+            <stringProp name="Argument.value">---------------------------------------------------------------</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="qastate" elementType="Argument">
+            <stringProp name="Argument.name">qastate</stringProp>
+            <stringProp name="Argument.value">pb</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="qatenantid" elementType="Argument">
+            <stringProp name="Argument.name">qatenantid</stringProp>
+            <stringProp name="Argument.value">pb.amritsar</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="qausernamea" elementType="Argument">
+            <stringProp name="Argument.name">qausernamea</stringProp>
+            <stringProp name="Argument.value">PR_USER161</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="qacode" elementType="Argument">
+            <stringProp name="Argument.name">qacode</stringProp>
+            <stringProp name="Argument.value">SUN04</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="qaarea" elementType="Argument">
+            <stringProp name="Argument.name">qaarea</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="---------------------------------------------------------------" elementType="Argument">
+            <stringProp name="Argument.name">---------------------------------------------------------------</stringProp>
+            <stringProp name="Argument.value">---------------------------------------------------------------</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="uatstate" elementType="Argument">
+            <stringProp name="Argument.name">uatstate</stringProp>
+            <stringProp name="Argument.value">pg</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="uatusernamecitya" elementType="Argument">
+            <stringProp name="Argument.name">uatusernamecitya</stringProp>
+            <stringProp name="Argument.value">CRPT2</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">EMPAUTO</stringProp>
+          </elementProp>
+          <elementProp name="uattenantid" elementType="Argument">
+            <stringProp name="Argument.name">uattenantid</stringProp>
+            <stringProp name="Argument.value">pg.citya</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="uatcode" elementType="Argument">
+            <stringProp name="Argument.name">uatcode</stringProp>
+            <stringProp name="Argument.value">JLC647</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="uatarea" elementType="Argument">
+            <stringProp name="Argument.name">uatarea</stringProp>
+            <stringProp name="Argument.value">120&apos; Road</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="---------------------------------------------------------------" elementType="Argument">
+            <stringProp name="Argument.name">---------------------------------------------------------------</stringProp>
+            <stringProp name="Argument.value">---------------------------------------------------------------</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+        <stringProp name="TestPlan.comments">{&quot;code&quot;:&quot;JLC647&quot;,&quot;name&quot;:&quot;120&apos; Road&quot;</stringProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <stringProp name="HTTPSampler.domain">${qa}</stringProp>
+        <stringProp name="HTTPSampler.protocol">https</stringProp>
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.implementation"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Authorization</stringProp>
+            <stringProp name="Header.value">Basic ZWdvdi11c2VyLWNsaWVudDo=</stringProp>
+          </elementProp>
+        </collectionProp>
+        <stringProp name="TestPlan.comments">Basic ZWdvdi11c2VyLWNsaWVudDplZ292LXVzZXItc2VjcmV0</stringProp>
+      </HeaderManager>
+      <hashTree/>
+      <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer" enabled="true">
+        <stringProp name="ConstantTimer.delay">300</stringProp>
+        <stringProp name="RandomTimer.range">100.0</stringProp>
+      </GaussianRandomTimer>
+      <hashTree/>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="true">
+        <stringProp name="ProxyControlGui.port">8888</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list"/>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">0</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">0</intProp>
+        <stringProp name="ProxyControlGui.default_encoding"></stringProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name"></stringProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">false</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">false</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+        <boolProp name="ProxyControlGui.detect_graphql_request">true</boolProp>
+      </ProxyControl>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Clear" enabled="false">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="CLEAR access_token CSV FILE" enabled="true">
+          <stringProp name="BeanShellSampler.query">FileWriter writer = new FileWriter(&quot;C:/Users/chira/Documents/PGR/access_token.csv&quot;, false);
+//BufferedWriter buffer = new BufferedWriter(writer);
+//buffer.flush();
+//buffer.close()
+writer.close();
+</stringProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="CLEAR complaintno CSV FILE" enabled="true">
+          <stringProp name="BeanShellSampler.query">FileWriter writer = new FileWriter(&quot;C:/Users/chira/Documents/PGR/complaintno.csv&quot;, false);
+//BufferedWriter buffer = new BufferedWriter(writer);
+//buffer.flush();
+//buffer.close()
+writer.close();
+</stringProp>
+        </BeanShellSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PGR Access Token Creation" enabled="false">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="script">URL url = sampler.getUrl();
+
+vars.put(&quot;host&quot;, String.valueOf(url.getHost()));
+var gethost = vars.get(&quot;host&quot;);
+log.info(&quot;starting&quot;);
+log.info(&quot;host is &quot; + gethost);
+switch (gethost)
+{
+case &quot;${qa}&quot;:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    vars.put(&quot;tenantId&quot;, &quot;${qatenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${qacode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${qaarea}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+case &quot;${uat}&quot;:
+    vars.put(&quot;state&quot;, &quot;${uatstate}&quot;);
+    vars.put(&quot;tenantId&quot;, &quot;${uattenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${uatcode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${uatarea}&quot;);
+    log.info(&quot;${uatstate}&quot;);
+    break;    
+default:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+} </stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CSR LOGIN /user/oauth/token-39" enabled="true">
+          <stringProp name="HTTPSampler.path">/user/oauth/token</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">QAPGRCSR</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">eGov%40123</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="grant_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">grant_type</stringProp>
+                <stringProp name="Argument.value">password</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="scope" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">scope</stringProp>
+                <stringProp name="Argument.value">read</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="tenantId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">tenantId</stringProp>
+                <stringProp name="Argument.value">${tenantId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="userType" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">EMPLOYEE</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="csr_access_token" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">csr_access_token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.access_token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_tenantId" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.UserRequest.tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/employee/user/login</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Basic ZWdvdi11c2VyLWNsaWVudDo=</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GRO LOGIN /user/oauth/token-149" enabled="true">
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/user/oauth/token</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">QAPGRGRO</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">eGov@123</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="grant_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">grant_type</stringProp>
+                <stringProp name="Argument.value">password</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="scope" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">scope</stringProp>
+                <stringProp name="Argument.value">read</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="tenantId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">tenantId</stringProp>
+                <stringProp name="Argument.value">${tenantId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="userType" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">EMPLOYEE</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/employee/user/login</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Basic ZWdvdi11c2VyLWNsaWVudDo=</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="gro_access_token" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">gro_access_token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.access_token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_tenantId" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.UserRequest.tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LME LOGIN /user/oauth/token-342" enabled="true">
+          <stringProp name="HTTPSampler.path">/user/oauth/token</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">QAPGRLME</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">eGov%40123</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="grant_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">grant_type</stringProp>
+                <stringProp name="Argument.value">password</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="scope" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">scope</stringProp>
+                <stringProp name="Argument.value">read</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="tenantId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">tenantId</stringProp>
+                <stringProp name="Argument.value">${tenantId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="userType" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">EMPLOYEE</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/employee/user/login</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Basic ZWdvdi11c2VyLWNsaWVudDo=</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="lme_access_token" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">lme_access_token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.access_token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_tenantId" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.UserRequest.tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Access_token to CSV" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">new File(&apos;C:/Users/chira/Documents/PGR/access_token.csv&apos;) &lt;&lt; vars.get(&apos;csr_access_token&apos;) &lt;&lt; &apos;,&apos; &lt;&lt; vars.get(&apos;gro_access_token&apos;) &lt;&lt; &apos;,&apos; &lt;&lt; vars.get(&apos;lme_access_token&apos;) &lt;&lt; &apos;,&apos; &lt;&lt; vars.get(&apos;pgr_tenantId&apos;) &lt;&lt; System.getProperty(&apos;line.separator&apos;)
+</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Complaint Numbers Creation" enabled="false">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">10</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="script">URL url = sampler.getUrl();
+
+vars.put(&quot;host&quot;, String.valueOf(url.getHost()));
+var gethost = vars.get(&quot;host&quot;);
+log.info(&quot;starting&quot;);
+log.info(&quot;host is &quot; + gethost);
+switch (gethost)
+{
+case &quot;${qa}&quot;:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    vars.put(&quot;tenantId&quot;, &quot;${qatenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${qacode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${qaarea}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+case &quot;${uat}&quot;:
+    vars.put(&quot;state&quot;, &quot;${uatstate}&quot;);
+    vars.put(&quot;tenantId&quot;, &quot;${uattenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${uatcode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${uatarea}&quot;);
+    log.info(&quot;${uatstate}&quot;);
+    break;    
+default:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+} </stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Access Token(CSR/GRO/LME)" enabled="true">
+          <stringProp name="filename">C:/Users/chira/Documents/PGR/access_token.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">csr_access_token,gro_access_token,lme_access_token,pgr_tenantId</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CSR LOGIN /user/oauth/token-39" enabled="false">
+          <stringProp name="HTTPSampler.path">/user/oauth/token</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">QAPGRCSR</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">eGov%40123</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="grant_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">grant_type</stringProp>
+                <stringProp name="Argument.value">password</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="scope" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">scope</stringProp>
+                <stringProp name="Argument.value">read</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="tenantId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">tenantId</stringProp>
+                <stringProp name="Argument.value">${tenantId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="userType" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">EMPLOYEE</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/employee/user/login</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Basic ZWdvdi11c2VyLWNsaWVudDo=</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="csr_access_token" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">csr_access_token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.access_token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_tenantId" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.UserRequest.tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="COMPLAINT CREATE (csr)" enabled="true">
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/pgr-services/v2/request/_create?tenantId=${pgr_tenantId}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;service&quot;: {&#xd;
+    &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;,&#xd;
+    &quot;serviceCode&quot;: &quot;NoStreetlight&quot;,&#xd;
+    &quot;description&quot;: &quot;Near landmark mall and adjacent to the post office&quot;,&#xd;
+    &quot;additionalDetail&quot;: {},&#xd;
+    &quot;source&quot;: &quot;web&quot;,&#xd;
+    &quot;address&quot;: {&#xd;
+      &quot;landmark&quot;: &quot;next to water tank&quot;,&#xd;
+      &quot;city&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;district&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;region&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;pincode&quot;: &quot;143001&quot;,&#xd;
+      &quot;locality&quot;: {&#xd;
+        &quot;code&quot;: &quot;SUN04&quot;,&#xd;
+        &quot;name&quot;: &quot;Ajit Nagar&quot;&#xd;
+      },&#xd;
+      &quot;geoLocation&quot;: {}&#xd;
+    },&#xd;
+    &quot;citizen&quot;: {&#xd;
+      &quot;name&quot;: &quot;Shan&quot;,&#xd;
+      &quot;type&quot;: &quot;CITIZEN&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;9738471440&quot;,&#xd;
+      &quot;roles&quot;: [&#xd;
+        {&#xd;
+          &quot;id&quot;: null,&#xd;
+          &quot;name&quot;: &quot;Citizen&quot;,&#xd;
+          &quot;code&quot;: &quot;CITIZEN&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+    }&#xd;
+  },&#xd;
+  &quot;workflow&quot;: {&#xd;
+    &quot;action&quot;: &quot;APPLY&quot;&#xd;
+  },&#xd;
+  &quot;RequestInfo&quot;: {&#xd;
+    &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+    &quot;authToken&quot;: &quot;${csr_access_token}&quot;,&#xd;
+    &quot;userInfo&quot;: {&#xd;
+      &quot;id&quot;: 12024,&#xd;
+      &quot;uuid&quot;: &quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+      &quot;userName&quot;: &quot;QAPGRCSR&quot;,&#xd;
+      &quot;name&quot;: &quot;QA CSR&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;8977889788&quot;,&#xd;
+      &quot;emailId&quot;: null,&#xd;
+      &quot;locale&quot;: null,&#xd;
+      &quot;type&quot;: &quot;EMPLOYEE&quot;,&#xd;
+      &quot;roles&quot;: [&#xd;
+        {&#xd;
+          &quot;name&quot;: &quot;Customer Support Representative&quot;,&#xd;
+          &quot;code&quot;: &quot;CSR&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;active&quot;: true,&#xd;
+      &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;,&#xd;
+      &quot;permanentCity&quot;: null&#xd;
+    }&#xd;
+  }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_complaintNo" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_complaintNo</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.ServiceWrappers[0].service.serviceRequestId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/digit-ui/employee/pgr/complaint/create</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="ComplaintNo to CSV" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">new File(&apos;C:/Users/chira/Documents/PGR/complaintno.csv&apos;) &lt;&lt; vars.get(&apos;pgr_complaintNo&apos;) &lt;&lt; System.getProperty(&apos;line.separator&apos;)</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="User Search" enabled="false">
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/egov-hrms/employees/_search?tenantId=${pgr_tenantId}&amp;codes=QAPGRLME</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+   &quot;RequestInfo&quot;:{&#xd;
+      &quot;apiId&quot;:&quot;Rainmaker&quot;,&#xd;
+      &quot;ver&quot;:&quot;.01&quot;,&#xd;
+      &quot;action&quot;:&quot;&quot;,&#xd;
+      &quot;did&quot;:&quot;1&quot;,&#xd;
+      &quot;key&quot;:&quot;&quot;,&#xd;
+      &quot;msgId&quot;:&quot;20170310130900|en_IN&quot;,&#xd;
+      &quot;requesterId&quot;:&quot;&quot;,&#xd;
+      &quot;authToken&quot;:&quot;${gro_access_token}&quot;&#xd;
+   }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/digit-ui/employee/pgr/complaint/details/${pgr_complaintNo}</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_lme_id" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_lme_id</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.Employees[0].id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_lme_uuid" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_lme_uuid</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.Employees[0].uuid</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="User Search" enabled="false">
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/egov-hrms/employees/_search?tenantId=${pgr_tenantId}&amp;codes=QAPGRLME</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+   &quot;RequestInfo&quot;:{&#xd;
+      &quot;apiId&quot;:&quot;Rainmaker&quot;,&#xd;
+      &quot;ver&quot;:&quot;.01&quot;,&#xd;
+      &quot;action&quot;:&quot;&quot;,&#xd;
+      &quot;did&quot;:&quot;1&quot;,&#xd;
+      &quot;key&quot;:&quot;&quot;,&#xd;
+      &quot;msgId&quot;:&quot;20170310130900|en_IN&quot;,&#xd;
+      &quot;requesterId&quot;:&quot;&quot;,&#xd;
+      &quot;authToken&quot;:&quot;${gro_access_token}&quot;&#xd;
+   }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/digit-ui/employee/pgr/complaint/details/${pgr_complaintNo}</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_lme_id" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_lme_id</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.Employees[0].id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_lme_uuid" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_lme_uuid</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.Employees[0].uuid</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="LME ID creation">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">10</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="script">URL url = sampler.getUrl();
+
+vars.put(&quot;host&quot;, String.valueOf(url.getHost()));
+var gethost = vars.get(&quot;host&quot;);
+log.info(&quot;starting&quot;);
+log.info(&quot;host is &quot; + gethost);
+switch (gethost)
+{
+case &quot;${qa}&quot;:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    vars.put(&quot;tenantId&quot;, &quot;${qatenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${qacode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${qaarea}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+case &quot;${uat}&quot;:
+    vars.put(&quot;state&quot;, &quot;${uatstate}&quot;);
+    vars.put(&quot;tenantId&quot;, &quot;${uattenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${uatcode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${uatarea}&quot;);
+    log.info(&quot;${uatstate}&quot;);
+    break;    
+default:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+} </stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CSR LOGIN /user/oauth/token-39" enabled="false">
+          <stringProp name="HTTPSampler.path">/user/oauth/token</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">QAPGRCSR</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">eGov%40123</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="grant_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">grant_type</stringProp>
+                <stringProp name="Argument.value">password</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="scope" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">scope</stringProp>
+                <stringProp name="Argument.value">read</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="tenantId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">tenantId</stringProp>
+                <stringProp name="Argument.value">${tenantId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="userType" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">EMPLOYEE</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/employee/user/login</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Basic ZWdvdi11c2VyLWNsaWVudDo=</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="csr_access_token" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">csr_access_token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.access_token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_tenantId" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.UserRequest.tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Access Token(CSR/GRO/LME)" enabled="true">
+          <stringProp name="filename">C:/Users/chira/Documents/PGR/access_token.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">csr_access_token,gro_access_token,lme_access_token,pgr_tenantId</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="COMPLAINT CREATE (csr)" enabled="true">
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/pgr-services/v2/request/_create?tenantId=${pgr_tenantId}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;service&quot;: {&#xd;
+    &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;,&#xd;
+    &quot;serviceCode&quot;: &quot;NoStreetlight&quot;,&#xd;
+    &quot;description&quot;: &quot;Near landmark mall and adjacent to the post office&quot;,&#xd;
+    &quot;additionalDetail&quot;: {},&#xd;
+    &quot;source&quot;: &quot;web&quot;,&#xd;
+    &quot;address&quot;: {&#xd;
+      &quot;landmark&quot;: &quot;next to water tank&quot;,&#xd;
+      &quot;city&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;district&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;region&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;pincode&quot;: &quot;143001&quot;,&#xd;
+      &quot;locality&quot;: {&#xd;
+        &quot;code&quot;: &quot;SUN04&quot;,&#xd;
+        &quot;name&quot;: &quot;Ajit Nagar&quot;&#xd;
+      },&#xd;
+      &quot;geoLocation&quot;: {}&#xd;
+    },&#xd;
+    &quot;citizen&quot;: {&#xd;
+      &quot;name&quot;: &quot;Shan&quot;,&#xd;
+      &quot;type&quot;: &quot;CITIZEN&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;9738471440&quot;,&#xd;
+      &quot;roles&quot;: [&#xd;
+        {&#xd;
+          &quot;id&quot;: null,&#xd;
+          &quot;name&quot;: &quot;Citizen&quot;,&#xd;
+          &quot;code&quot;: &quot;CITIZEN&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+    }&#xd;
+  },&#xd;
+  &quot;workflow&quot;: {&#xd;
+    &quot;action&quot;: &quot;APPLY&quot;&#xd;
+  },&#xd;
+  &quot;RequestInfo&quot;: {&#xd;
+    &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+    &quot;authToken&quot;: &quot;${csr_access_token}&quot;,&#xd;
+    &quot;userInfo&quot;: {&#xd;
+      &quot;id&quot;: 12024,&#xd;
+      &quot;uuid&quot;: &quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+      &quot;userName&quot;: &quot;QAPGRCSR&quot;,&#xd;
+      &quot;name&quot;: &quot;QA CSR&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;8977889788&quot;,&#xd;
+      &quot;emailId&quot;: null,&#xd;
+      &quot;locale&quot;: null,&#xd;
+      &quot;type&quot;: &quot;EMPLOYEE&quot;,&#xd;
+      &quot;roles&quot;: [&#xd;
+        {&#xd;
+          &quot;name&quot;: &quot;Customer Support Representative&quot;,&#xd;
+          &quot;code&quot;: &quot;CSR&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;active&quot;: true,&#xd;
+      &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;,&#xd;
+      &quot;permanentCity&quot;: null&#xd;
+    }&#xd;
+  }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_complaintNo" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_complaintNo</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.ServiceWrappers[0].service.serviceRequestId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/digit-ui/employee/pgr/complaint/create</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="User Search" enabled="true">
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/egov-hrms/employees/_search?tenantId=${pgr_tenantId}&amp;codes=QAPGRLME</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+   &quot;RequestInfo&quot;:{&#xd;
+      &quot;apiId&quot;:&quot;Rainmaker&quot;,&#xd;
+      &quot;ver&quot;:&quot;.01&quot;,&#xd;
+      &quot;action&quot;:&quot;&quot;,&#xd;
+      &quot;did&quot;:&quot;1&quot;,&#xd;
+      &quot;key&quot;:&quot;&quot;,&#xd;
+      &quot;msgId&quot;:&quot;20170310130900|en_IN&quot;,&#xd;
+      &quot;requesterId&quot;:&quot;&quot;,&#xd;
+      &quot;authToken&quot;:&quot;${gro_access_token}&quot;&#xd;
+   }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/digit-ui/employee/pgr/complaint/details/${pgr_complaintNo}</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_lme_id" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_lme_id</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.Employees[0].id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_lme_uuid" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_lme_uuid</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.Employees[0].uuid</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Data  to CSV" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">new File(&apos;C:/Users/chira/Documents/PGR/LMEid.csv&apos;) &lt;&lt; vars.get(&apos;pgr_complaintNo&apos;) &lt;&lt; &apos;,&apos; &lt;&lt; vars.get(&apos;pgr_lme_id&apos;) &lt;&lt; &apos;,&apos; &lt;&lt; vars.get(&apos;pgr_lme_uuid&apos;) &lt;&lt; System.getProperty(&apos;line.separator&apos;)</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="LME IDs  to CSV" enabled="false">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">new File(&apos;C:/Users/chira/Documents/PGR/complaintno.csv&apos;) &lt;&lt; vars.get(&apos;pgr_lme_id&apos;) &lt;&lt;&apos;,&apos; &lt;&lt; vars.get(&apos;pgr_lme_uuid&apos;) &lt;&lt; System.getProperty(&apos;line.separator&apos;)</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="LME performance " enabled="false">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">11</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="script">URL url = sampler.getUrl();
+
+vars.put(&quot;host&quot;, String.valueOf(url.getHost()));
+var gethost = vars.get(&quot;host&quot;);
+log.info(&quot;starting&quot;);
+log.info(&quot;host is &quot; + gethost);
+switch (gethost)
+{
+case &quot;${qa}&quot;:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    vars.put(&quot;tenantId&quot;, &quot;${qatenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${qacode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${qaarea}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+case &quot;${uat}&quot;:
+    vars.put(&quot;state&quot;, &quot;${uatstate}&quot;);
+    vars.put(&quot;tenantId&quot;, &quot;${uattenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${uatcode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${uatarea}&quot;);
+    log.info(&quot;${uatstate}&quot;);
+    break;    
+default:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+} </stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Access Token(CSR/GRO/LME)" enabled="true">
+          <stringProp name="filename">C:/Users/chira/Documents/PGR/access_token.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">csr_access_token,gro_access_token,lme_access_token,pgr_tenantId</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">C:/Users/chira/Documents/PGR/LMEid.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">pgr_complaintNo,pgr_lme_id,pgr_lme_uuid</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CSR LOGIN /user/oauth/token-39" enabled="false">
+          <stringProp name="HTTPSampler.path">/user/oauth/token</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">QAPGRCSR</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">eGov%40123</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="grant_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">grant_type</stringProp>
+                <stringProp name="Argument.value">password</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="scope" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">scope</stringProp>
+                <stringProp name="Argument.value">read</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="tenantId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">tenantId</stringProp>
+                <stringProp name="Argument.value">${tenantId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="userType" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">EMPLOYEE</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/employee/user/login</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Basic ZWdvdi11c2VyLWNsaWVudDo=</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="csr_access_token" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">csr_access_token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.access_token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="pgr_tenantId" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pgr_tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.UserRequest.tenantId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="LME IDs  to CSV" enabled="false">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">new File(&apos;C:/Users/chira/Documents/PGR/complaintno.csv&apos;) &lt;&lt; vars.get(&apos;pgr_lme_id&apos;) &lt;&lt;&apos;,&apos; &lt;&lt; vars.get(&apos;pgr_lme_uuid&apos;) &lt;&lt; System.getProperty(&apos;line.separator&apos;)</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ASSIGN to LME /pgr-services/v2/request/_update-216" enabled="true">
+          <stringProp name="TestPlan.comments">&quot;workflow&quot;:{
+      &quot;action&quot;:&quot;ASSIGN&quot;,
+      &quot;assignes&quot;:null,</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/pgr-services/v2/request/_update</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+   &quot;details&quot;:{&#xd;
+      &quot;CS_COMPLAINT_DETAILS_COMPLAINT_NO&quot;:&quot;${pgr_complaintNo}&quot;,&#xd;
+      &quot;CS_COMPLAINT_DETAILS_APPLICATION_STATUS&quot;:&quot;CS_COMMON_PENDINGFORASSIGNMENT&quot;,&#xd;
+      &quot;CS_ADDCOMPLAINT_COMPLAINT_TYPE&quot;:&quot;SERVICEDEFS.STREETLIGHTS&quot;,&#xd;
+      &quot;CS_ADDCOMPLAINT_COMPLAINT_SUB_TYPE&quot;:&quot;SERVICEDEFS.NOSTREETLIGHT&quot;,&#xd;
+      &quot;CS_COMPLAINT_ADDTIONAL_DETAILS&quot;:&quot;Near landmark mall and adjacent to the post office&quot;,&#xd;
+      &quot;CS_COMPLAINT_FILED_DATE&quot;:&quot;4-Oct-2021&quot;,&#xd;
+      &quot;ES_CREATECOMPLAINT_ADDRESS&quot;:[&#xd;
+         &quot;next to water tank&quot;,&#xd;
+         &quot;PB_AMRITSAR_ADMIN_SUN04&quot;,&#xd;
+         &quot;Amritsar&quot;,&#xd;
+         &quot;143001&quot;&#xd;
+      ]&#xd;
+   },&#xd;
+   &quot;workflow&quot;:{&#xd;
+      &quot;action&quot;:&quot;ASSIGN&quot;,&#xd;
+      &quot;assignes&quot;:[&quot;${pgr_lme_uuid}&quot;],&#xd;
+      &quot;comments&quot;:&quot;Resolve this complaint ASAP&quot;,&#xd;
+      &quot;verificationDocuments&quot;:[&#xd;
+         {&#xd;
+            &quot;documentType&quot;:&quot;PHOTO&quot;,&#xd;
+            &quot;fileStoreId&quot;:&quot;4520832f-8540-42c3-9c2a-e36183279f9e&quot;,&#xd;
+            &quot;documentUid&quot;:&quot;&quot;,&#xd;
+            &quot;additionalDetails&quot;:{&#xd;
+               &#xd;
+            }&#xd;
+         }&#xd;
+      ]&#xd;
+   },&#xd;
+   &quot;service&quot;:{&#xd;
+      &quot;active&quot;:true,&#xd;
+      &quot;citizen&quot;:{&#xd;
+         &quot;id&quot;:12082,&#xd;
+         &quot;userName&quot;:&quot;9738471440&quot;,&#xd;
+         &quot;name&quot;:&quot;Shan&quot;,&#xd;
+         &quot;type&quot;:&quot;CITIZEN&quot;,&#xd;
+         &quot;mobileNumber&quot;:&quot;9738471440&quot;,&#xd;
+         &quot;emailId&quot;:&quot;shanmugam.moorthy@egovernments.org&quot;,&#xd;
+         &quot;roles&quot;:[&#xd;
+            {&#xd;
+               &quot;id&quot;:null,&#xd;
+               &quot;name&quot;:&quot;Citizen&quot;,&#xd;
+               &quot;code&quot;:&quot;CITIZEN&quot;,&#xd;
+               &quot;tenantId&quot;:&quot;${state}&quot;&#xd;
+            }&#xd;
+         ],&#xd;
+         &quot;tenantId&quot;:&quot;${state}&quot;,&#xd;
+         &quot;uuid&quot;:&quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+         &quot;active&quot;:true&#xd;
+      },&#xd;
+      &quot;id&quot;:&quot;d0325e54-c254-443f-ac90-a32fc8e2bc68&quot;,&#xd;
+      &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;,&#xd;
+      &quot;serviceCode&quot;:&quot;NoStreetlight&quot;,&#xd;
+      &quot;serviceRequestId&quot;:&quot;${pgr_complaintNo}&quot;,&#xd;
+      &quot;description&quot;:&quot;Near landmark mall and adjacent to the post office&quot;,&#xd;
+      &quot;accountId&quot;:&quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+      &quot;rating&quot;:null,&#xd;
+      &quot;additionalDetail&quot;:{&#xd;
+         &#xd;
+      },&#xd;
+      &quot;applicationStatus&quot;:&quot;PENDINGFORASSIGNMENT&quot;,&#xd;
+      &quot;source&quot;:&quot;web&quot;,&#xd;
+      &quot;address&quot;:{&#xd;
+         &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;,&#xd;
+         &quot;doorNo&quot;:null,&#xd;
+         &quot;plotNo&quot;:null,&#xd;
+         &quot;id&quot;:&quot;a2b0756b-100b-4164-bc1e-ebfee4d05155&quot;,&#xd;
+         &quot;landmark&quot;:&quot;next to water tank&quot;,&#xd;
+         &quot;city&quot;:&quot;Amritsar&quot;,&#xd;
+         &quot;district&quot;:&quot;Amritsar&quot;,&#xd;
+         &quot;region&quot;:&quot;Amritsar&quot;,&#xd;
+         &quot;state&quot;:null,&#xd;
+         &quot;country&quot;:null,&#xd;
+         &quot;pincode&quot;:&quot;143001&quot;,&#xd;
+         &quot;additionDetails&quot;:null,&#xd;
+         &quot;buildingName&quot;:null,&#xd;
+         &quot;street&quot;:null,&#xd;
+         &quot;locality&quot;:{&#xd;
+            &quot;code&quot;:&quot;SUN04&quot;,&#xd;
+            &quot;name&quot;:null,&#xd;
+            &quot;label&quot;:null,&#xd;
+            &quot;latitude&quot;:null,&#xd;
+            &quot;longitude&quot;:null,&#xd;
+            &quot;children&quot;:null,&#xd;
+            &quot;materializedPath&quot;:null&#xd;
+         },&#xd;
+         &quot;geoLocation&quot;:{&#xd;
+            &quot;latitude&quot;:0,&#xd;
+            &quot;longitude&quot;:0,&#xd;
+            &quot;additionalDetails&quot;:null&#xd;
+         }&#xd;
+      },&#xd;
+      &quot;auditDetails&quot;:{&#xd;
+         &quot;createdBy&quot;:&quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+         &quot;lastModifiedBy&quot;:&quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+         &quot;createdTime&quot;:1633286793286,&#xd;
+         &quot;lastModifiedTime&quot;:1633286793286&#xd;
+      }&#xd;
+   },&#xd;
+   &quot;audit&quot;:{&#xd;
+      &quot;citizen&quot;:{&#xd;
+         &quot;id&quot;:12082,&#xd;
+         &quot;userName&quot;:&quot;9738471440&quot;,&#xd;
+         &quot;name&quot;:&quot;Shan&quot;,&#xd;
+         &quot;type&quot;:&quot;CITIZEN&quot;,&#xd;
+         &quot;mobileNumber&quot;:&quot;9738471440&quot;,&#xd;
+         &quot;emailId&quot;:&quot;shanmugam.moorthy@egovernments.org&quot;,&#xd;
+         &quot;roles&quot;:[&#xd;
+            {&#xd;
+               &quot;id&quot;:null,&#xd;
+               &quot;name&quot;:&quot;Citizen&quot;,&#xd;
+               &quot;code&quot;:&quot;CITIZEN&quot;,&#xd;
+               &quot;tenantId&quot;:&quot;${state}&quot;&#xd;
+            }&#xd;
+         ],&#xd;
+         &quot;tenantId&quot;:&quot;${state}&quot;,&#xd;
+         &quot;uuid&quot;:&quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+         &quot;active&quot;:true&#xd;
+      },&#xd;
+      &quot;details&quot;:{&#xd;
+         &quot;createdBy&quot;:&quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+         &quot;lastModifiedBy&quot;:&quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+         &quot;createdTime&quot;:1633286793286,&#xd;
+         &quot;lastModifiedTime&quot;:1633286793286&#xd;
+      },&#xd;
+      &quot;source&quot;:&quot;web&quot;,&#xd;
+      &quot;rating&quot;:null,&#xd;
+      &quot;serviceCode&quot;:&quot;NoStreetlight&quot;&#xd;
+   },&#xd;
+   &quot;RequestInfo&quot;:{&#xd;
+      &quot;apiId&quot;:&quot;Rainmaker&quot;,&#xd;
+      &quot;authToken&quot;:&quot;${gro_access_token}&quot;,&#xd;
+      &quot;userInfo&quot;:{&#xd;
+         &quot;id&quot;:12034,&#xd;
+         &quot;uuid&quot;:&quot;68ab310a-0d3b-411f-8295-a1e1bde9c1dd&quot;,&#xd;
+         &quot;userName&quot;:&quot;QAPGRGRO&quot;,&#xd;
+         &quot;name&quot;:&quot;QA GRO&quot;,&#xd;
+         &quot;mobileNumber&quot;:&quot;7876765650&quot;,&#xd;
+         &quot;emailId&quot;:&quot;&quot;,&#xd;
+         &quot;locale&quot;:null,&#xd;
+         &quot;type&quot;:&quot;EMPLOYEE&quot;,&#xd;
+         &quot;roles&quot;:[&#xd;
+            {&#xd;
+               &quot;name&quot;:&quot;TL Counter Employee&quot;,&#xd;
+               &quot;code&quot;:&quot;TL_CEMP&quot;,&#xd;
+               &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;&#xd;
+            },&#xd;
+            {&#xd;
+               &quot;name&quot;:&quot;Auto Escalation Employee&quot;,&#xd;
+               &quot;code&quot;:&quot;AUTO_ESCALATE&quot;,&#xd;
+               &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;&#xd;
+            },&#xd;
+            {&#xd;
+               &quot;name&quot;:&quot;Grievance Routing Officer&quot;,&#xd;
+               &quot;code&quot;:&quot;GRO&quot;,&#xd;
+               &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;&#xd;
+            }&#xd;
+         ],&#xd;
+         &quot;active&quot;:true,&#xd;
+         &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;,&#xd;
+         &quot;permanentCity&quot;:null&#xd;
+      }&#xd;
+   }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/digit-ui/employee/pgr/complaint/details/${pgr_complaintNo}</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LME RESOLVE /pgr-services/v2/request/_update-396" enabled="true">
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/pgr-services/v2/request/_update</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;details&quot;: {&#xd;
+    &quot;CS_COMPLAINT_DETAILS_COMPLAINT_NO&quot;: &quot;${pgr_complaintNo}&quot;,&#xd;
+    &quot;CS_COMPLAINT_DETAILS_APPLICATION_STATUS&quot;: &quot;CS_COMMON_PENDINGATLME&quot;,&#xd;
+    &quot;CS_ADDCOMPLAINT_COMPLAINT_TYPE&quot;: &quot;SERVICEDEFS.STREETLIGHTS&quot;,&#xd;
+    &quot;CS_ADDCOMPLAINT_COMPLAINT_SUB_TYPE&quot;: &quot;SERVICEDEFS.NOSTREETLIGHT&quot;,&#xd;
+    &quot;CS_COMPLAINT_ADDTIONAL_DETAILS&quot;: &quot;Near landmark mall and adjacent to the post office&quot;,&#xd;
+    &quot;CS_COMPLAINT_FILED_DATE&quot;: &quot;4-Oct-2021&quot;,&#xd;
+    &quot;ES_CREATECOMPLAINT_ADDRESS&quot;: [&#xd;
+      &quot;next to water tank&quot;,&#xd;
+      &quot;PB_AMRITSAR_ADMIN_SUN04&quot;,&#xd;
+      &quot;Amritsar&quot;,&#xd;
+      &quot;143001&quot;&#xd;
+    ]&#xd;
+  },&#xd;
+  &quot;thumbnails&quot;: [&#xd;
+    &quot;https://minio-egov-micro-qa.digit.org/egov-rainmaker-1/${pgr_tenantId}/property-upload/October/4/1633287038098DCFjNtrQhL_small.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20211003%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211003T185314Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=b38733aacbe196b51b7f5418c67164f2e7e4f84c45a038cf7e5574a6a3e2aa7b&quot;&#xd;
+  ],&#xd;
+  &quot;images&quot;: [&#xd;
+    &quot;https://minio-egov-micro-qa.digit.org/egov-rainmaker-1/${pgr_tenantId}/property-upload/October/4/1633287038098DCFjNtrQhL_large.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20211003%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211003T185314Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=5644740286b4ca25e398b86dc127cf9903b0fbc1b0d2de4f35b22436f9eef085&quot;&#xd;
+  ],&#xd;
+  &quot;workflow&quot;: {&#xd;
+    &quot;action&quot;: &quot;RESOLVE&quot;,&#xd;
+    &quot;assignes&quot;: null,&#xd;
+    &quot;comments&quot;: &quot;Resolved the issue within SLA&quot;,&#xd;
+    &quot;verificationDocuments&quot;: [&#xd;
+      {&#xd;
+        &quot;id&quot;: &quot;60f10c0c-ce36-4f41-afeb-ec3001edf69e&quot;,&#xd;
+        &quot;documentType&quot;: &quot;PHOTO&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;4520832f-8540-42c3-9c2a-e36183279f9e&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;&quot;,&#xd;
+        &quot;additionalDetails&quot;: null&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;PHOTO&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;4b79cfef-1f29-4864-91f7-0e38b96a29c2&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;&quot;,&#xd;
+        &quot;additionalDetails&quot;: {}&#xd;
+      }&#xd;
+    ]&#xd;
+  },&#xd;
+  &quot;service&quot;: {&#xd;
+    &quot;active&quot;: true,&#xd;
+    &quot;citizen&quot;: {&#xd;
+      &quot;id&quot;: 12082,&#xd;
+      &quot;userName&quot;: &quot;9738471440&quot;,&#xd;
+      &quot;name&quot;: &quot;Shan&quot;,&#xd;
+      &quot;type&quot;: &quot;CITIZEN&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;9738471440&quot;,&#xd;
+      &quot;emailId&quot;: &quot;shanmugam.moorthy@egovernments.org&quot;,&#xd;
+      &quot;roles&quot;: [&#xd;
+        {&#xd;
+          &quot;id&quot;: null,&#xd;
+          &quot;name&quot;: &quot;Citizen&quot;,&#xd;
+          &quot;code&quot;: &quot;CITIZEN&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${state}&quot;&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;tenantId&quot;: &quot;${state}&quot;,&#xd;
+      &quot;uuid&quot;: &quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+      &quot;active&quot;: true&#xd;
+    },&#xd;
+    &quot;id&quot;: &quot;d0325e54-c254-443f-ac90-a32fc8e2bc68&quot;,&#xd;
+    &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;,&#xd;
+    &quot;serviceCode&quot;: &quot;NoStreetlight&quot;,&#xd;
+    &quot;serviceRequestId&quot;: &quot;${pgr_complaintNo}&quot;,&#xd;
+    &quot;description&quot;: &quot;Near landmark mall and adjacent to the post office&quot;,&#xd;
+    &quot;accountId&quot;: &quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+    &quot;rating&quot;: null,&#xd;
+    &quot;additionalDetail&quot;: {},&#xd;
+    &quot;applicationStatus&quot;: &quot;PENDINGATLME&quot;,&#xd;
+    &quot;source&quot;: &quot;web&quot;,&#xd;
+    &quot;address&quot;: {&#xd;
+      &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;,&#xd;
+      &quot;doorNo&quot;: null,&#xd;
+      &quot;plotNo&quot;: null,&#xd;
+      &quot;id&quot;: &quot;a2b0756b-100b-4164-bc1e-ebfee4d05155&quot;,&#xd;
+      &quot;landmark&quot;: &quot;next to water tank&quot;,&#xd;
+      &quot;city&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;district&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;region&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;state&quot;: null,&#xd;
+      &quot;country&quot;: null,&#xd;
+      &quot;pincode&quot;: &quot;143001&quot;,&#xd;
+      &quot;additionDetails&quot;: null,&#xd;
+      &quot;buildingName&quot;: null,&#xd;
+      &quot;street&quot;: null,&#xd;
+      &quot;locality&quot;: {&#xd;
+        &quot;code&quot;: &quot;SUN04&quot;,&#xd;
+        &quot;name&quot;: null,&#xd;
+        &quot;label&quot;: null,&#xd;
+        &quot;latitude&quot;: null,&#xd;
+        &quot;longitude&quot;: null,&#xd;
+        &quot;children&quot;: null,&#xd;
+        &quot;materializedPath&quot;: null&#xd;
+      },&#xd;
+      &quot;geoLocation&quot;: {&#xd;
+        &quot;latitude&quot;: 0,&#xd;
+        &quot;longitude&quot;: 0,&#xd;
+        &quot;additionalDetails&quot;: null&#xd;
+      }&#xd;
+    },&#xd;
+    &quot;auditDetails&quot;: {&#xd;
+      &quot;createdBy&quot;: &quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+      &quot;lastModifiedBy&quot;: &quot;68ab310a-0d3b-411f-8295-a1e1bde9c1dd&quot;,&#xd;
+      &quot;createdTime&quot;: 1633286793286,&#xd;
+      &quot;lastModifiedTime&quot;: 1633287044257&#xd;
+    }&#xd;
+  },&#xd;
+  &quot;audit&quot;: {&#xd;
+    &quot;citizen&quot;: {&#xd;
+      &quot;id&quot;: 12082,&#xd;
+      &quot;userName&quot;: &quot;9738471440&quot;,&#xd;
+      &quot;name&quot;: &quot;Shan&quot;,&#xd;
+      &quot;type&quot;: &quot;CITIZEN&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;9738471440&quot;,&#xd;
+      &quot;emailId&quot;: &quot;shanmugam.moorthy@egovernments.org&quot;,&#xd;
+      &quot;roles&quot;: [&#xd;
+        {&#xd;
+          &quot;id&quot;: null,&#xd;
+          &quot;name&quot;: &quot;Citizen&quot;,&#xd;
+          &quot;code&quot;: &quot;CITIZEN&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${state}&quot;&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;tenantId&quot;: &quot;${state}&quot;,&#xd;
+      &quot;uuid&quot;: &quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+      &quot;active&quot;: true&#xd;
+    },&#xd;
+    &quot;details&quot;: {&#xd;
+      &quot;createdBy&quot;: &quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+      &quot;lastModifiedBy&quot;: &quot;68ab310a-0d3b-411f-8295-a1e1bde9c1dd&quot;,&#xd;
+      &quot;createdTime&quot;: 1633286793286,&#xd;
+      &quot;lastModifiedTime&quot;: 1633287044257&#xd;
+    },&#xd;
+    &quot;source&quot;: &quot;web&quot;,&#xd;
+    &quot;rating&quot;: null,&#xd;
+    &quot;serviceCode&quot;: &quot;NoStreetlight&quot;&#xd;
+  },&#xd;
+  &quot;RequestInfo&quot;: {&#xd;
+    &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+    &quot;authToken&quot;: &quot;${lme_access_token}&quot;,&#xd;
+    &quot;userInfo&quot;: {&#xd;
+      &quot;id&quot;: 12035,&#xd;
+      &quot;uuid&quot;: &quot;c933f1bd-54fc-45e8-bdbe-05f943955659&quot;,&#xd;
+      &quot;userName&quot;: &quot;QAPGRLME&quot;,&#xd;
+      &quot;name&quot;: &quot;QA LME&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;7867867679&quot;,&#xd;
+      &quot;emailId&quot;: null,&#xd;
+      &quot;locale&quot;: null,&#xd;
+      &quot;type&quot;: &quot;EMPLOYEE&quot;,&#xd;
+      &quot;roles&quot;: [&#xd;
+        {&#xd;
+          &quot;name&quot;: &quot;TL Counter Employee&quot;,&#xd;
+          &quot;code&quot;: &quot;TL_CEMP&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;name&quot;: &quot;PGR Last Mile Employee&quot;,&#xd;
+          &quot;code&quot;: &quot;PGR_LME&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;name&quot;: &quot;Auto Escalation Employee&quot;,&#xd;
+          &quot;code&quot;: &quot;AUTO_ESCALATE&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;active&quot;: true,&#xd;
+      &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;,&#xd;
+      &quot;permanentCity&quot;: null&#xd;
+    }&#xd;
+  }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/digit-ui/employee/pgr/complaint/details/${pgr_complaintNo}</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="LME APPROVAL Data Creation" enabled="false">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">10</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="script">URL url = sampler.getUrl();
+
+vars.put(&quot;host&quot;, String.valueOf(url.getHost()));
+var gethost = vars.get(&quot;host&quot;);
+log.info(&quot;starting&quot;);
+log.info(&quot;host is &quot; + gethost);
+switch (gethost)
+{
+case &quot;${qa}&quot;:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    //vars.put(&quot;tenantId&quot;, &quot;${qatenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${qacode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${qaarea}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+case &quot;${uat}&quot;:
+    vars.put(&quot;state&quot;, &quot;${uatstate}&quot;);
+    vars.put(&quot;tenantId&quot;, &quot;${uattenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${uatcode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${uatarea}&quot;);
+    log.info(&quot;${uatstate}&quot;);
+    break;    
+default:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+} </stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Access Token(CSR/GRO/LME)" enabled="true">
+          <stringProp name="filename">C:/Users/chira/Documents/PGR/access_token.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">csr_access_token,gro_access_token,lme_access_token,pgr_tenantId</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="LMEID" enabled="true">
+          <stringProp name="filename">C:/Users/chira/Documents/PGR/LMEid.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">complaint_no,pgr_lme_id,pgr_lme_uuid</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="COMPLAINT CREATE /pgr-services/v2/request/_create?tenantId=pb.amritsar-107" enabled="true">
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/pgr-services/v2/request/_create?tenantId=${pgr_tenantId}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;service&quot;:{&quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;,&quot;serviceCode&quot;:&quot;NoStreetlight&quot;,&quot;description&quot;:&quot;Near landmark mall and adjacent to the post office&quot;,&quot;additionalDetail&quot;:{},&quot;source&quot;:&quot;web&quot;,&quot;address&quot;:{&quot;landmark&quot;:&quot;next to water tank&quot;,&quot;city&quot;:&quot;Amritsar&quot;,&quot;district&quot;:&quot;Amritsar&quot;,&quot;region&quot;:&quot;Amritsar&quot;,&quot;pincode&quot;:&quot;143001&quot;,&quot;locality&quot;:{&quot;code&quot;:&quot;SUN04&quot;,&quot;name&quot;:&quot;Ajit Nagar&quot;},&quot;geoLocation&quot;:{}},&quot;citizen&quot;:{&quot;name&quot;:&quot;Shan&quot;,&quot;type&quot;:&quot;CITIZEN&quot;,&quot;mobileNumber&quot;:&quot;9738471440&quot;,&quot;roles&quot;:[{&quot;id&quot;:null,&quot;name&quot;:&quot;Citizen&quot;,&quot;code&quot;:&quot;CITIZEN&quot;,&quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;}],&quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;}},&quot;workflow&quot;:{&quot;action&quot;:&quot;APPLY&quot;},&quot;RequestInfo&quot;:{&quot;apiId&quot;:&quot;Rainmaker&quot;,&quot;authToken&quot;:&quot;${csr_access_token}&quot;,&quot;userInfo&quot;:{&quot;id&quot;:12024,&quot;uuid&quot;:&quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&quot;userName&quot;:&quot;QAPGRCSR&quot;,&quot;name&quot;:&quot;QA CSR&quot;,&quot;mobileNumber&quot;:&quot;8977889788&quot;,&quot;emailId&quot;:null,&quot;locale&quot;:null,&quot;type&quot;:&quot;EMPLOYEE&quot;,&quot;roles&quot;:[{&quot;name&quot;:&quot;Customer Support Representative&quot;,&quot;code&quot;:&quot;CSR&quot;,&quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;}],&quot;active&quot;:true,&quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;,&quot;permanentCity&quot;:null}}}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/digit-ui/employee/pgr/complaint/create</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="complaintNo_LMERESOLVE" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">complaintNo_LMERESOLVE</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.ServiceWrappers[0].service.serviceRequestId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ASSIGN to LME /pgr-services/v2/request/_update-216" enabled="true">
+          <stringProp name="TestPlan.comments">&quot;workflow&quot;:{
+      &quot;action&quot;:&quot;ASSIGN&quot;,
+      &quot;assignes&quot;:null,</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/pgr-services/v2/request/_update</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+   &quot;details&quot;:{&#xd;
+      &quot;CS_COMPLAINT_DETAILS_COMPLAINT_NO&quot;:&quot;${complaintNo_LMERESOLVE}&quot;,&#xd;
+      &quot;CS_COMPLAINT_DETAILS_APPLICATION_STATUS&quot;:&quot;CS_COMMON_PENDINGFORASSIGNMENT&quot;,&#xd;
+      &quot;CS_ADDCOMPLAINT_COMPLAINT_TYPE&quot;:&quot;SERVICEDEFS.STREETLIGHTS&quot;,&#xd;
+      &quot;CS_ADDCOMPLAINT_COMPLAINT_SUB_TYPE&quot;:&quot;SERVICEDEFS.NOSTREETLIGHT&quot;,&#xd;
+      &quot;CS_COMPLAINT_ADDTIONAL_DETAILS&quot;:&quot;Near landmark mall and adjacent to the post office&quot;,&#xd;
+      &quot;CS_COMPLAINT_FILED_DATE&quot;:&quot;4-Oct-2021&quot;,&#xd;
+      &quot;ES_CREATECOMPLAINT_ADDRESS&quot;:[&#xd;
+         &quot;next to water tank&quot;,&#xd;
+         &quot;PB_AMRITSAR_ADMIN_SUN04&quot;,&#xd;
+         &quot;Amritsar&quot;,&#xd;
+         &quot;143001&quot;&#xd;
+      ]&#xd;
+   },&#xd;
+   &quot;workflow&quot;:{&#xd;
+      &quot;action&quot;:&quot;ASSIGN&quot;,&#xd;
+      &quot;assignes&quot;:[&quot;${pgr_lme_uuid}&quot;],&#xd;
+      &quot;comments&quot;:&quot;Resolve this complaint ASAP&quot;,&#xd;
+      &quot;verificationDocuments&quot;:[&#xd;
+         {&#xd;
+            &quot;documentType&quot;:&quot;PHOTO&quot;,&#xd;
+            &quot;fileStoreId&quot;:&quot;4520832f-8540-42c3-9c2a-e36183279f9e&quot;,&#xd;
+            &quot;documentUid&quot;:&quot;&quot;,&#xd;
+            &quot;additionalDetails&quot;:{&#xd;
+               &#xd;
+            }&#xd;
+         }&#xd;
+      ]&#xd;
+   },&#xd;
+   &quot;service&quot;:{&#xd;
+      &quot;active&quot;:true,&#xd;
+      &quot;citizen&quot;:{&#xd;
+         &quot;id&quot;:12082,&#xd;
+         &quot;userName&quot;:&quot;9738471440&quot;,&#xd;
+         &quot;name&quot;:&quot;Shan&quot;,&#xd;
+         &quot;type&quot;:&quot;CITIZEN&quot;,&#xd;
+         &quot;mobileNumber&quot;:&quot;9738471440&quot;,&#xd;
+         &quot;emailId&quot;:&quot;shanmugam.moorthy@egovernments.org&quot;,&#xd;
+         &quot;roles&quot;:[&#xd;
+            {&#xd;
+               &quot;id&quot;:null,&#xd;
+               &quot;name&quot;:&quot;Citizen&quot;,&#xd;
+               &quot;code&quot;:&quot;CITIZEN&quot;,&#xd;
+               &quot;tenantId&quot;:&quot;${state}&quot;&#xd;
+            }&#xd;
+         ],&#xd;
+         &quot;tenantId&quot;:&quot;${state}&quot;,&#xd;
+         &quot;uuid&quot;:&quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+         &quot;active&quot;:true&#xd;
+      },&#xd;
+      &quot;id&quot;:&quot;d0325e54-c254-443f-ac90-a32fc8e2bc68&quot;,&#xd;
+      &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;,&#xd;
+      &quot;serviceCode&quot;:&quot;NoStreetlight&quot;,&#xd;
+      &quot;serviceRequestId&quot;:&quot;${complaintNo_LMERESOLVE}&quot;,&#xd;
+      &quot;description&quot;:&quot;Near landmark mall and adjacent to the post office&quot;,&#xd;
+      &quot;accountId&quot;:&quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+      &quot;rating&quot;:null,&#xd;
+      &quot;additionalDetail&quot;:{&#xd;
+         &#xd;
+      },&#xd;
+      &quot;applicationStatus&quot;:&quot;PENDINGFORASSIGNMENT&quot;,&#xd;
+      &quot;source&quot;:&quot;web&quot;,&#xd;
+      &quot;address&quot;:{&#xd;
+         &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;,&#xd;
+         &quot;doorNo&quot;:null,&#xd;
+         &quot;plotNo&quot;:null,&#xd;
+         &quot;id&quot;:&quot;a2b0756b-100b-4164-bc1e-ebfee4d05155&quot;,&#xd;
+         &quot;landmark&quot;:&quot;next to water tank&quot;,&#xd;
+         &quot;city&quot;:&quot;Amritsar&quot;,&#xd;
+         &quot;district&quot;:&quot;Amritsar&quot;,&#xd;
+         &quot;region&quot;:&quot;Amritsar&quot;,&#xd;
+         &quot;state&quot;:null,&#xd;
+         &quot;country&quot;:null,&#xd;
+         &quot;pincode&quot;:&quot;143001&quot;,&#xd;
+         &quot;additionDetails&quot;:null,&#xd;
+         &quot;buildingName&quot;:null,&#xd;
+         &quot;street&quot;:null,&#xd;
+         &quot;locality&quot;:{&#xd;
+            &quot;code&quot;:&quot;SUN04&quot;,&#xd;
+            &quot;name&quot;:null,&#xd;
+            &quot;label&quot;:null,&#xd;
+            &quot;latitude&quot;:null,&#xd;
+            &quot;longitude&quot;:null,&#xd;
+            &quot;children&quot;:null,&#xd;
+            &quot;materializedPath&quot;:null&#xd;
+         },&#xd;
+         &quot;geoLocation&quot;:{&#xd;
+            &quot;latitude&quot;:0,&#xd;
+            &quot;longitude&quot;:0,&#xd;
+            &quot;additionalDetails&quot;:null&#xd;
+         }&#xd;
+      },&#xd;
+      &quot;auditDetails&quot;:{&#xd;
+         &quot;createdBy&quot;:&quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+         &quot;lastModifiedBy&quot;:&quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+         &quot;createdTime&quot;:1633286793286,&#xd;
+         &quot;lastModifiedTime&quot;:1633286793286&#xd;
+      }&#xd;
+   },&#xd;
+   &quot;audit&quot;:{&#xd;
+      &quot;citizen&quot;:{&#xd;
+         &quot;id&quot;:12082,&#xd;
+         &quot;userName&quot;:&quot;9738471440&quot;,&#xd;
+         &quot;name&quot;:&quot;Shan&quot;,&#xd;
+         &quot;type&quot;:&quot;CITIZEN&quot;,&#xd;
+         &quot;mobileNumber&quot;:&quot;9738471440&quot;,&#xd;
+         &quot;emailId&quot;:&quot;shanmugam.moorthy@egovernments.org&quot;,&#xd;
+         &quot;roles&quot;:[&#xd;
+            {&#xd;
+               &quot;id&quot;:null,&#xd;
+               &quot;name&quot;:&quot;Citizen&quot;,&#xd;
+               &quot;code&quot;:&quot;CITIZEN&quot;,&#xd;
+               &quot;tenantId&quot;:&quot;${state}&quot;&#xd;
+            }&#xd;
+         ],&#xd;
+         &quot;tenantId&quot;:&quot;${state}&quot;,&#xd;
+         &quot;uuid&quot;:&quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+         &quot;active&quot;:true&#xd;
+      },&#xd;
+      &quot;details&quot;:{&#xd;
+         &quot;createdBy&quot;:&quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+         &quot;lastModifiedBy&quot;:&quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+         &quot;createdTime&quot;:1633286793286,&#xd;
+         &quot;lastModifiedTime&quot;:1633286793286&#xd;
+      },&#xd;
+      &quot;source&quot;:&quot;web&quot;,&#xd;
+      &quot;rating&quot;:null,&#xd;
+      &quot;serviceCode&quot;:&quot;NoStreetlight&quot;&#xd;
+   },&#xd;
+   &quot;RequestInfo&quot;:{&#xd;
+      &quot;apiId&quot;:&quot;Rainmaker&quot;,&#xd;
+      &quot;authToken&quot;:&quot;${gro_access_token}&quot;,&#xd;
+      &quot;userInfo&quot;:{&#xd;
+         &quot;id&quot;:12034,&#xd;
+         &quot;uuid&quot;:&quot;68ab310a-0d3b-411f-8295-a1e1bde9c1dd&quot;,&#xd;
+         &quot;userName&quot;:&quot;QAPGRGRO&quot;,&#xd;
+         &quot;name&quot;:&quot;QA GRO&quot;,&#xd;
+         &quot;mobileNumber&quot;:&quot;7876765650&quot;,&#xd;
+         &quot;emailId&quot;:&quot;&quot;,&#xd;
+         &quot;locale&quot;:null,&#xd;
+         &quot;type&quot;:&quot;EMPLOYEE&quot;,&#xd;
+         &quot;roles&quot;:[&#xd;
+            {&#xd;
+               &quot;name&quot;:&quot;TL Counter Employee&quot;,&#xd;
+               &quot;code&quot;:&quot;TL_CEMP&quot;,&#xd;
+               &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;&#xd;
+            },&#xd;
+            {&#xd;
+               &quot;name&quot;:&quot;Auto Escalation Employee&quot;,&#xd;
+               &quot;code&quot;:&quot;AUTO_ESCALATE&quot;,&#xd;
+               &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;&#xd;
+            },&#xd;
+            {&#xd;
+               &quot;name&quot;:&quot;Grievance Routing Officer&quot;,&#xd;
+               &quot;code&quot;:&quot;GRO&quot;,&#xd;
+               &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;&#xd;
+            }&#xd;
+         ],&#xd;
+         &quot;active&quot;:true,&#xd;
+         &quot;tenantId&quot;:&quot;${pgr_tenantId}&quot;,&#xd;
+         &quot;permanentCity&quot;:null&#xd;
+      }&#xd;
+   }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/digit-ui/employee/pgr/complaint/details/${complaintNo_LMERESOLVE}</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="ComplaintNo to CSV" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">new File(&apos;C:/Users/chira/Documents/PGR/LMERESOLVEcomplaintno.csv&apos;) &lt;&lt; vars.get(&apos;complaintNo_LMERESOLVE&apos;) &lt;&lt; System.getProperty(&apos;line.separator&apos;)</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="LME RESOLVE PERF TEST" enabled="false">
+        <intProp name="ThreadGroup.num_threads">7</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="script">URL url = sampler.getUrl();
+
+vars.put(&quot;host&quot;, String.valueOf(url.getHost()));
+var gethost = vars.get(&quot;host&quot;);
+log.info(&quot;starting&quot;);
+log.info(&quot;host is &quot; + gethost);
+switch (gethost)
+{
+case &quot;${qa}&quot;:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    //vars.put(&quot;tenantId&quot;, &quot;${qatenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${qacode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${qaarea}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+case &quot;${uat}&quot;:
+    vars.put(&quot;state&quot;, &quot;${uatstate}&quot;);
+    vars.put(&quot;tenantId&quot;, &quot;${uattenantid}&quot;);
+    vars.put(&quot;code&quot;, &quot;${uatcode}&quot;);
+    vars.put(&quot;area&quot;, &quot;${uatarea}&quot;);
+    log.info(&quot;${uatstate}&quot;);
+    break;    
+default:
+    vars.put(&quot;state&quot;, &quot;${qastate}&quot;);
+    log.info(&quot;${qastate}&quot;);
+    break;
+} </stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">C:/Users/chira/Documents/PGR/LMERESOLVEcomplaintno.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">pgr_complaintNo</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Access Token(CSR/GRO/LME)" enabled="true">
+          <stringProp name="filename">C:/Users/chira/Documents/PGR/access_token.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">csr_access_token,gro_access_token,lme_access_token,pgr_tenantId</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LME RESOLVE /pgr-services/v2/request/_update-396" enabled="true">
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/pgr-services/v2/request/_update</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;details&quot;: {&#xd;
+    &quot;CS_COMPLAINT_DETAILS_COMPLAINT_NO&quot;: &quot;${pgr_complaintNo}&quot;,&#xd;
+    &quot;CS_COMPLAINT_DETAILS_APPLICATION_STATUS&quot;: &quot;CS_COMMON_PENDINGATLME&quot;,&#xd;
+    &quot;CS_ADDCOMPLAINT_COMPLAINT_TYPE&quot;: &quot;SERVICEDEFS.STREETLIGHTS&quot;,&#xd;
+    &quot;CS_ADDCOMPLAINT_COMPLAINT_SUB_TYPE&quot;: &quot;SERVICEDEFS.NOSTREETLIGHT&quot;,&#xd;
+    &quot;CS_COMPLAINT_ADDTIONAL_DETAILS&quot;: &quot;Near landmark mall and adjacent to the post office&quot;,&#xd;
+    &quot;CS_COMPLAINT_FILED_DATE&quot;: &quot;4-Oct-2021&quot;,&#xd;
+    &quot;ES_CREATECOMPLAINT_ADDRESS&quot;: [&#xd;
+      &quot;next to water tank&quot;,&#xd;
+      &quot;PB_AMRITSAR_ADMIN_SUN04&quot;,&#xd;
+      &quot;Amritsar&quot;,&#xd;
+      &quot;143001&quot;&#xd;
+    ]&#xd;
+  },&#xd;
+  &quot;thumbnails&quot;: [&#xd;
+    &quot;https://minio-egov-micro-qa.digit.org/egov-rainmaker-1/${pgr_tenantId}/property-upload/October/4/1633287038098DCFjNtrQhL_small.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20211003%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211003T185314Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=b38733aacbe196b51b7f5418c67164f2e7e4f84c45a038cf7e5574a6a3e2aa7b&quot;&#xd;
+  ],&#xd;
+  &quot;images&quot;: [&#xd;
+    &quot;https://minio-egov-micro-qa.digit.org/egov-rainmaker-1/${pgr_tenantId}/property-upload/October/4/1633287038098DCFjNtrQhL_large.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20211003%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211003T185314Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=5644740286b4ca25e398b86dc127cf9903b0fbc1b0d2de4f35b22436f9eef085&quot;&#xd;
+  ],&#xd;
+  &quot;workflow&quot;: {&#xd;
+    &quot;action&quot;: &quot;RESOLVE&quot;,&#xd;
+    &quot;assignes&quot;: null,&#xd;
+    &quot;comments&quot;: &quot;Resolved the issue within SLA&quot;,&#xd;
+    &quot;verificationDocuments&quot;: [&#xd;
+      {&#xd;
+        &quot;id&quot;: &quot;60f10c0c-ce36-4f41-afeb-ec3001edf69e&quot;,&#xd;
+        &quot;documentType&quot;: &quot;PHOTO&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;4520832f-8540-42c3-9c2a-e36183279f9e&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;&quot;,&#xd;
+        &quot;additionalDetails&quot;: null&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;PHOTO&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;4b79cfef-1f29-4864-91f7-0e38b96a29c2&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;&quot;,&#xd;
+        &quot;additionalDetails&quot;: {}&#xd;
+      }&#xd;
+    ]&#xd;
+  },&#xd;
+  &quot;service&quot;: {&#xd;
+    &quot;active&quot;: true,&#xd;
+    &quot;citizen&quot;: {&#xd;
+      &quot;id&quot;: 12082,&#xd;
+      &quot;userName&quot;: &quot;9738471440&quot;,&#xd;
+      &quot;name&quot;: &quot;Shan&quot;,&#xd;
+      &quot;type&quot;: &quot;CITIZEN&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;9738471440&quot;,&#xd;
+      &quot;emailId&quot;: &quot;shanmugam.moorthy@egovernments.org&quot;,&#xd;
+      &quot;roles&quot;: [&#xd;
+        {&#xd;
+          &quot;id&quot;: null,&#xd;
+          &quot;name&quot;: &quot;Citizen&quot;,&#xd;
+          &quot;code&quot;: &quot;CITIZEN&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${state}&quot;&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;tenantId&quot;: &quot;${state}&quot;,&#xd;
+      &quot;uuid&quot;: &quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+      &quot;active&quot;: true&#xd;
+    },&#xd;
+    &quot;id&quot;: &quot;d0325e54-c254-443f-ac90-a32fc8e2bc68&quot;,&#xd;
+    &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;,&#xd;
+    &quot;serviceCode&quot;: &quot;NoStreetlight&quot;,&#xd;
+    &quot;serviceRequestId&quot;: &quot;${pgr_complaintNo}&quot;,&#xd;
+    &quot;description&quot;: &quot;Near landmark mall and adjacent to the post office&quot;,&#xd;
+    &quot;accountId&quot;: &quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+    &quot;rating&quot;: null,&#xd;
+    &quot;additionalDetail&quot;: {},&#xd;
+    &quot;applicationStatus&quot;: &quot;PENDINGATLME&quot;,&#xd;
+    &quot;source&quot;: &quot;web&quot;,&#xd;
+    &quot;address&quot;: {&#xd;
+      &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;,&#xd;
+      &quot;doorNo&quot;: null,&#xd;
+      &quot;plotNo&quot;: null,&#xd;
+      &quot;id&quot;: &quot;a2b0756b-100b-4164-bc1e-ebfee4d05155&quot;,&#xd;
+      &quot;landmark&quot;: &quot;next to water tank&quot;,&#xd;
+      &quot;city&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;district&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;region&quot;: &quot;Amritsar&quot;,&#xd;
+      &quot;state&quot;: null,&#xd;
+      &quot;country&quot;: null,&#xd;
+      &quot;pincode&quot;: &quot;143001&quot;,&#xd;
+      &quot;additionDetails&quot;: null,&#xd;
+      &quot;buildingName&quot;: null,&#xd;
+      &quot;street&quot;: null,&#xd;
+      &quot;locality&quot;: {&#xd;
+        &quot;code&quot;: &quot;SUN04&quot;,&#xd;
+        &quot;name&quot;: null,&#xd;
+        &quot;label&quot;: null,&#xd;
+        &quot;latitude&quot;: null,&#xd;
+        &quot;longitude&quot;: null,&#xd;
+        &quot;children&quot;: null,&#xd;
+        &quot;materializedPath&quot;: null&#xd;
+      },&#xd;
+      &quot;geoLocation&quot;: {&#xd;
+        &quot;latitude&quot;: 0,&#xd;
+        &quot;longitude&quot;: 0,&#xd;
+        &quot;additionalDetails&quot;: null&#xd;
+      }&#xd;
+    },&#xd;
+    &quot;auditDetails&quot;: {&#xd;
+      &quot;createdBy&quot;: &quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+      &quot;lastModifiedBy&quot;: &quot;68ab310a-0d3b-411f-8295-a1e1bde9c1dd&quot;,&#xd;
+      &quot;createdTime&quot;: 1633286793286,&#xd;
+      &quot;lastModifiedTime&quot;: 1633287044257&#xd;
+    }&#xd;
+  },&#xd;
+  &quot;audit&quot;: {&#xd;
+    &quot;citizen&quot;: {&#xd;
+      &quot;id&quot;: 12082,&#xd;
+      &quot;userName&quot;: &quot;9738471440&quot;,&#xd;
+      &quot;name&quot;: &quot;Shan&quot;,&#xd;
+      &quot;type&quot;: &quot;CITIZEN&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;9738471440&quot;,&#xd;
+      &quot;emailId&quot;: &quot;shanmugam.moorthy@egovernments.org&quot;,&#xd;
+      &quot;roles&quot;: [&#xd;
+        {&#xd;
+          &quot;id&quot;: null,&#xd;
+          &quot;name&quot;: &quot;Citizen&quot;,&#xd;
+          &quot;code&quot;: &quot;CITIZEN&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${state}&quot;&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;tenantId&quot;: &quot;${state}&quot;,&#xd;
+      &quot;uuid&quot;: &quot;d4d79ee3-bc2b-4b73-bbde-11018f136d3d&quot;,&#xd;
+      &quot;active&quot;: true&#xd;
+    },&#xd;
+    &quot;details&quot;: {&#xd;
+      &quot;createdBy&quot;: &quot;c7f34f4b-baca-42ea-80a4-d81a781ae80e&quot;,&#xd;
+      &quot;lastModifiedBy&quot;: &quot;68ab310a-0d3b-411f-8295-a1e1bde9c1dd&quot;,&#xd;
+      &quot;createdTime&quot;: 1633286793286,&#xd;
+      &quot;lastModifiedTime&quot;: 1633287044257&#xd;
+    },&#xd;
+    &quot;source&quot;: &quot;web&quot;,&#xd;
+    &quot;rating&quot;: null,&#xd;
+    &quot;serviceCode&quot;: &quot;NoStreetlight&quot;&#xd;
+  },&#xd;
+  &quot;RequestInfo&quot;: {&#xd;
+    &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+    &quot;authToken&quot;: &quot;${lme_access_token}&quot;,&#xd;
+    &quot;userInfo&quot;: {&#xd;
+      &quot;id&quot;: 12035,&#xd;
+      &quot;uuid&quot;: &quot;c933f1bd-54fc-45e8-bdbe-05f943955659&quot;,&#xd;
+      &quot;userName&quot;: &quot;QAPGRLME&quot;,&#xd;
+      &quot;name&quot;: &quot;QA LME&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;7867867679&quot;,&#xd;
+      &quot;emailId&quot;: null,&#xd;
+      &quot;locale&quot;: null,&#xd;
+      &quot;type&quot;: &quot;EMPLOYEE&quot;,&#xd;
+      &quot;roles&quot;: [&#xd;
+        {&#xd;
+          &quot;name&quot;: &quot;TL Counter Employee&quot;,&#xd;
+          &quot;code&quot;: &quot;TL_CEMP&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;name&quot;: &quot;PGR Last Mile Employee&quot;,&#xd;
+          &quot;code&quot;: &quot;PGR_LME&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;name&quot;: &quot;Auto Escalation Employee&quot;,&#xd;
+          &quot;code&quot;: &quot;AUTO_ESCALATE&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;active&quot;: true,&#xd;
+      &quot;tenantId&quot;: &quot;${pgr_tenantId}&quot;,&#xd;
+      &quot;permanentCity&quot;: null&#xd;
+    }&#xd;
+  }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org/digit-ui/employee/pgr/complaint/details/${pgr_complaintNo}</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-GB,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://qa.digit.org</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
