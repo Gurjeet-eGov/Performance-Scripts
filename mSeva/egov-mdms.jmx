@@ -6,6 +6,8 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Login Variables">
@@ -3073,7 +3075,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group: property-services" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group: property-services">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -3084,11 +3086,36 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="PT Variables">
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="PT Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
+            <elementProp name="locality" elementType="Argument">
+              <stringProp name="Argument.name">locality</stringProp>
+              <stringProp name="Argument.value">SC7</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="propertyIds" elementType="Argument">
+              <stringProp name="Argument.name">propertyIds</stringProp>
+              <stringProp name="Argument.value">PT873487</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
             <elementProp name="mobileNumber" elementType="Argument">
               <stringProp name="Argument.name">mobileNumber</stringProp>
               <stringProp name="Argument.value">9876543210</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="oldpropertyids" elementType="Argument">
+              <stringProp name="Argument.name">oldpropertyids</stringProp>
+              <stringProp name="Argument.value">OLDPT873487</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="surveyId" elementType="Argument">
+              <stringProp name="Argument.name">surveyId</stringProp>
+              <stringProp name="Argument.value">SID1387</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="acknowledgementIds" elementType="Argument">
+              <stringProp name="Argument.name">acknowledgementIds</stringProp>
+              <stringProp name="Argument.value">ACK123</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="yearConstruction" elementType="Argument">
@@ -3104,7 +3131,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
           </collectionProp>
         </Arguments>
         <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -3178,7 +3205,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -3215,7 +3242,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -3252,47 +3279,12 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Search Property">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Search Property" enabled="false">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="PT  Search Variables">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="locality" elementType="Argument">
-                <stringProp name="Argument.name">locality</stringProp>
-                <stringProp name="Argument.value">SC7</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="propertyIds" elementType="Argument">
-                <stringProp name="Argument.name">propertyIds</stringProp>
-                <stringProp name="Argument.value">PT873487</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="mobileNumber" elementType="Argument">
-                <stringProp name="Argument.name">mobileNumber</stringProp>
-                <stringProp name="Argument.value">9876543210</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="oldpropertyids" elementType="Argument">
-                <stringProp name="Argument.name">oldpropertyids</stringProp>
-                <stringProp name="Argument.value">OLDPT873487</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="surveyId" elementType="Argument">
-                <stringProp name="Argument.name">surveyId</stringProp>
-                <stringProp name="Argument.value">SID1387</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-              <elementProp name="acknowledgementIds" elementType="Argument">
-                <stringProp name="Argument.name">acknowledgementIds</stringProp>
-                <stringProp name="Argument.value">ACK123</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </Arguments>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PT Search (tenantId - locality)">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PT Search (tenantId - locality)" enabled="true">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/property-services/property/_search?tenantId=${state_tenant}.${city_tenant}&amp;locality=${locality}</stringProp>
@@ -3380,7 +3372,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PT Search (tenantId - mobileNumber)">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PT Search (tenantId - mobileNumber)" enabled="true">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/property-services/property/_search?tenantId=${state_tenant}&amp;mobileNumber=${mobileNumber}</stringProp>
@@ -3601,12 +3593,11 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create &amp; Search Property">
-          <boolProp name="TransactionController.parent">true</boolProp>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create &amp; Search Property" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/egov-location/_search (REVENUE - Locality)">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/egov-location/_search (REVENUE - Locality)" enabled="true">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&amp;boundaryType=Locality&amp;tenantId=${state_tenant}.${city_tenant}</stringProp>
@@ -3674,7 +3665,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
             </JSR223PostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MDMS PropertyTax">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MDMS PropertyTax" enabled="true">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/egov-mdms-service/v1/_search?tenantId=${state_tenant}.${city_tenant}</stringProp>
@@ -3806,7 +3797,7 @@ vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&qu
             </DebugPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_create">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_create" enabled="true">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/property-services/property/_create?tenantId=${state_tenant}.${city_tenant}</stringProp>
@@ -3839,14 +3830,14 @@ vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&qu
         &quot;constructionDetail&quot;: {&#xd;
           &quot;builtUpArea&quot;: 16.67&#xd;
         },&#xd;
-        &quot;usageCategory&quot;: &quot;RESIDENTIAL&quot;&#xd;
+        &quot;usageCategory&quot;: &quot;${UsageCategory.code}&quot;&#xd;
       }&#xd;
     ],&#xd;
-    &quot;usageCategoryMajor&quot;: &quot;RESIDENTIAL&quot;,&#xd;
+    &quot;usageCategoryMajor&quot;: &quot;${UsageCategoryMajor.code}&quot;,&#xd;
     &quot;landArea&quot;: &quot;200&quot;,&#xd;
     &quot;propertyType&quot;: &quot;${PropertyType.code}&quot;,&#xd;
     &quot;noOfFloors&quot;: 1,&#xd;
-    &quot;ownershipCategory&quot;: &quot;INDIVIDUAL.SINGLEOWNER&quot;,&#xd;
+    &quot;ownershipCategory&quot;: &quot;${OwnerShipCategory.code}&quot;,&#xd;
     &quot;owners&quot;: [&#xd;
       {&#xd;
         &quot;name&quot;: &quot;Dennis&quot;,&#xd;
@@ -3891,7 +3882,7 @@ vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&qu
       }&#xd;
     ],&#xd;
     &quot;superBuiltUpArea&quot;: null,&#xd;
-    &quot;usageCategory&quot;: &quot;RESIDENTIAL&quot;,&#xd;
+    &quot;usageCategory&quot;: &quot;${UsageCategory.code}&quot;,&#xd;
     &quot;tenantId&quot;: &quot;${state_tenant}.${city_tenant}&quot;,&#xd;
     &quot;creationReason&quot;: &quot;CREATE&quot;&#xd;
   },&#xd;
@@ -3930,27 +3921,27 @@ vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&qu
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="propertyId">
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="propertyId" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">propertyId</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].propertyId</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
               <stringProp name="JSONPostProcessor.defaultValues">PropertyID NOT FOUND</stringProp>
             </JSONPostProcessor>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="acknowldgementNumber">
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="acknowldgementNumber" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">acknowldgementNumber</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].acknowldgementNumber</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="false">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_search">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_search" enabled="true">
               <stringProp name="HTTPSampler.domain">${URL}</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.path">/property-services/property/_search?tenantId=${state_tenant}.${city_tenant}&amp;propertyIds=${propertyId}&amp;_=1757669330429</stringProp>
@@ -4079,7 +4070,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
             </JSR223PostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_create">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_create" enabled="true">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/property-services/property/_create?tenantId=${state_tenant}.${city_tenant}</stringProp>
@@ -4108,7 +4099,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
     &quot;units&quot;: [&#xd;
       {&#xd;
         &quot;floorNo&quot;: &quot;0&quot;,&#xd;
-        &quot;occupancyType&quot;: &quot;${OccupancyType.code}&quot;,&#xd;
+        &quot;occupancyType&quot;: &quot;SELFOCCUPIED&quot;,&#xd;
         &quot;constructionDetail&quot;: {&#xd;
           &quot;builtUpArea&quot;: 16.67&#xd;
         },&#xd;
@@ -4117,7 +4108,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
     ],&#xd;
     &quot;usageCategoryMajor&quot;: &quot;RESIDENTIAL&quot;,&#xd;
     &quot;landArea&quot;: &quot;200&quot;,&#xd;
-    &quot;propertyType&quot;: &quot;${PropertyType.code}&quot;,&#xd;
+    &quot;propertyType&quot;: &quot;BUILTUP.INDEPENDENTPROPERTY&quot;,&#xd;
     &quot;noOfFloors&quot;: 1,&#xd;
     &quot;ownershipCategory&quot;: &quot;INDIVIDUAL.SINGLEOWNER&quot;,&#xd;
     &quot;owners&quot;: [&#xd;
@@ -4127,7 +4118,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
         &quot;fatherOrHusbandName&quot;: &quot;Markus&quot;,&#xd;
         &quot;emailId&quot;: null,&#xd;
         &quot;ownerShipPercentage&quot;: &quot;100&quot;,&#xd;
-        &quot;permanentAddress&quot;: &quot;BD 123, PB_TESTING_REVENUE_${boundaryCode}, ${city_tenant}&quot;,&#xd;
+        &quot;permanentAddress&quot;: &quot;BD 123, PB_TESTING_REVENUE_${boundaryCode}, testing&quot;,&#xd;
         &quot;relationship&quot;: &quot;Father&quot;,&#xd;
         &quot;ownerType&quot;: &quot;NONE&quot;,&#xd;
         &quot;gender&quot;: &quot;Male&quot;,&#xd;
@@ -4139,28 +4130,28 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
     &quot;documents&quot;: [&#xd;
       {&#xd;
         &quot;documentType&quot;: &quot;OWNER.ADDRESSPROOF.ELECTRICITYBILL&quot;,&#xd;
-        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
-        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+        &quot;fileStoreId&quot;: &quot;0237bb45-63fc-4e7d-9577-7bed0107ae04&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;0237bb45-63fc-4e7d-9577-7bed0107ae04&quot;&#xd;
       },&#xd;
       {&#xd;
         &quot;documentType&quot;: &quot;OWNER.IDENTITYPROOF.DRIVING&quot;,&#xd;
-        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
-        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+        &quot;fileStoreId&quot;: &quot;044b5789-cf28-4a6a-b6d5-cb1bc0c3e522&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;044b5789-cf28-4a6a-b6d5-cb1bc0c3e522&quot;&#xd;
       },&#xd;
       {&#xd;
         &quot;documentType&quot;: &quot;OWNER.REGISTRATIONPROOF.COURTDECREE&quot;,&#xd;
-        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
-        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+        &quot;fileStoreId&quot;: &quot;4ff503b5-d889-440d-bca9-657b530a500d&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;4ff503b5-d889-440d-bca9-657b530a500d&quot;&#xd;
       },&#xd;
       {&#xd;
         &quot;documentType&quot;: &quot;OWNER.USAGEPROOF.ELECTRICITYBILL&quot;,&#xd;
-        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
-        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+        &quot;fileStoreId&quot;: &quot;c767c6f7-2bbe-40fb-8bad-f391c55fb56c&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;c767c6f7-2bbe-40fb-8bad-f391c55fb56c&quot;&#xd;
       },&#xd;
       {&#xd;
         &quot;documentType&quot;: &quot;OWNER.CONSTRUCTIONPROOF.BPACERTIFICATE&quot;,&#xd;
-        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
-        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+        &quot;fileStoreId&quot;: &quot;d7806203-0d17-4b92-b8eb-682070993ebe&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;d7806203-0d17-4b92-b8eb-682070993ebe&quot;&#xd;
       }&#xd;
     ],&#xd;
     &quot;superBuiltUpArea&quot;: null,&#xd;
@@ -4372,356 +4363,6 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
               <hashTree/>
             </hashTree>
           </hashTree>
-        </hashTree>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group: Billing Service">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
-        <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <stringProp name="LoopController.loops">1</stringProp>
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-        </elementProp>
-      </ThreadGroup>
-      <hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="PT Variables">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="businessService" elementType="Argument">
-              <stringProp name="Argument.name">businessService</stringProp>
-              <stringProp name="Argument.value">PT</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/taxheads/_search">
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">/billing-service/taxheads/_search?tenantId=${state_tenant}.${city_tenant}&amp;businessService=${businessService}</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;RequestInfo&quot;: {&#xd;
-        &quot;apiId&quot;: &quot;string&quot;,&#xd;
-        &quot;ver&quot;: &quot;string&quot;,&#xd;
-        &quot;ts&quot;: 0,&#xd;
-        &quot;action&quot;: &quot;string&quot;,&#xd;
-        &quot;did&quot;: &quot;string&quot;,&#xd;
-        &quot;key&quot;: &quot;string&quot;,&#xd;
-        &quot;msgId&quot;: &quot;string&quot;,&#xd;
-        &quot;requesterId&quot;: &quot;string&quot;,&#xd;
-        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
-    }&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">accept</stringProp>
-                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-              </elementProp>
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">content-type</stringProp>
-                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/taxperiods/_search">
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">/billing-service/taxperiods/_search?tenantId=${state_tenant}.${city_tenant}&amp;service=${businessService}</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;RequestInfo&quot;: {&#xd;
-        &quot;apiId&quot;: &quot;string&quot;,&#xd;
-        &quot;ver&quot;: &quot;string&quot;,&#xd;
-        &quot;ts&quot;: 0,&#xd;
-        &quot;action&quot;: &quot;string&quot;,&#xd;
-        &quot;did&quot;: &quot;string&quot;,&#xd;
-        &quot;key&quot;: &quot;string&quot;,&#xd;
-        &quot;msgId&quot;: &quot;string&quot;,&#xd;
-        &quot;requesterId&quot;: &quot;string&quot;,&#xd;
-        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
-    }&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">accept</stringProp>
-                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-              </elementProp>
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">content-type</stringProp>
-                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/businessservices/_search">
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">/billing-service/businessservices/_search?tenantId=${state_tenant}.${city_tenant}&amp;businessService=${businessService}</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;RequestInfo&quot;: {&#xd;
-        &quot;apiId&quot;: &quot;string&quot;,&#xd;
-        &quot;ver&quot;: &quot;string&quot;,&#xd;
-        &quot;ts&quot;: 0,&#xd;
-        &quot;action&quot;: &quot;string&quot;,&#xd;
-        &quot;did&quot;: &quot;string&quot;,&#xd;
-        &quot;key&quot;: &quot;string&quot;,&#xd;
-        &quot;msgId&quot;: &quot;string&quot;,&#xd;
-        &quot;requesterId&quot;: &quot;string&quot;,&#xd;
-        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
-    }&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">accept</stringProp>
-                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-              </elementProp>
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">content-type</stringProp>
-                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-        </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/demand/_create">
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">/billing-service/demand/_create</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-    &quot;RequestInfo&quot;: {&#xd;
-        &quot;apiId&quot;: &quot;string&quot;,&#xd;
-        &quot;ver&quot;: &quot;string&quot;,&#xd;
-        &quot;ts&quot;: 0,&#xd;
-        &quot;action&quot;: &quot;string&quot;,&#xd;
-        &quot;did&quot;: &quot;string&quot;,&#xd;
-        &quot;key&quot;: &quot;string&quot;,&#xd;
-        &quot;msgId&quot;: &quot;string&quot;,&#xd;
-        &quot;requesterId&quot;: &quot;string&quot;,&#xd;
-        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
-    }&#xd;
-}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">accept</stringProp>
-                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-              </elementProp>
-              <elementProp name="" elementType="Header">
-                <stringProp name="Header.name">content-type</stringProp>
-                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
         </hashTree>
       </hashTree>
     </hashTree>
