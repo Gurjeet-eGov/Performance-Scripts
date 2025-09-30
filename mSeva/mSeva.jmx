@@ -6,6 +6,8 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Login Variables">
@@ -196,7 +198,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group" enabled="true">
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -807,8 +809,8 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
         </hashTree>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group: User Service" enabled="false">
-        <intProp name="ThreadGroup.num_threads">100</intProp>
-        <intProp name="ThreadGroup.ramp_time">10</intProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
@@ -965,7 +967,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="User Login" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="User Login" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
@@ -1035,7 +1037,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
                 </elementProp>
                 <elementProp name="Referer" elementType="Header">
                   <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">https://mseva.lgpunjab.gov.in/employee/user/login</stringProp>
+                  <stringProp name="Header.value">https://${URL}/employee/user/login</stringProp>
                 </elementProp>
                 <elementProp name="Sec-Fetch-Site" elementType="Header">
                   <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
@@ -1047,7 +1049,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
                 </elementProp>
                 <elementProp name="Origin" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://mseva.lgpunjab.gov.in</stringProp>
+                  <stringProp name="Header.value">https://${URL}</stringProp>
                 </elementProp>
                 <elementProp name="Accept" elementType="Header">
                   <stringProp name="Header.name">Accept</stringProp>
@@ -1092,7 +1094,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="User Search" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="User Search" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
@@ -1151,7 +1153,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="User Search &amp; Update" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="User Search &amp; Update" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
@@ -1254,7 +1256,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="User Logout" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="User Logout" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
@@ -1329,7 +1331,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
                   </elementProp>
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">https://mseva.lgpunjab.gov.in/employee/user/login</stringProp>
+                    <stringProp name="Header.value">https://${URL}/employee/user/login</stringProp>
                   </elementProp>
                   <elementProp name="Sec-Fetch-Site" elementType="Header">
                     <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
@@ -1341,7 +1343,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
                   </elementProp>
                   <elementProp name="Origin" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">https://mseva.lgpunjab.gov.in</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
                   </elementProp>
                   <elementProp name="Accept" elementType="Header">
                     <stringProp name="Header.name">Accept</stringProp>
@@ -1509,7 +1511,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
-                <stringProp name="Header.value">https://mseva.lgpunjab.gov.in/employee/user/login</stringProp>
+                <stringProp name="Header.value">https://${URL}/employee/user/login</stringProp>
               </elementProp>
               <elementProp name="Sec-Fetch-Site" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
@@ -1521,7 +1523,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
               </elementProp>
               <elementProp name="Origin" elementType="Header">
                 <stringProp name="Header.name">Origin</stringProp>
-                <stringProp name="Header.value">https://mseva.lgpunjab.gov.in</stringProp>
+                <stringProp name="Header.value">https://${URL}</stringProp>
               </elementProp>
               <elementProp name="Accept" elementType="Header">
                 <stringProp name="Header.name">Accept</stringProp>
@@ -3073,7 +3075,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group: property-services" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group: property-services">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -3099,6 +3101,11 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             <elementProp name="businessName" elementType="Argument">
               <stringProp name="Argument.name">businessName</stringProp>
               <stringProp name="Argument.value">XYZ</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="businessService" elementType="Argument">
+              <stringProp name="Argument.name">businessService</stringProp>
+              <stringProp name="Argument.value">PT</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -3141,7 +3148,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -3252,7 +3259,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Search Property">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Search Property" enabled="false">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
@@ -3380,7 +3387,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PT Search (tenantId - mobileNumber)">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PT Search (tenantId - mobileNumber)" enabled="true">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/property-services/property/_search?tenantId=${state_tenant}&amp;mobileNumber=${mobileNumber}</stringProp>
@@ -3601,12 +3608,286 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create &amp; Search Property">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create &amp; Search Property" enabled="false">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/egov-location/_search (REVENUE - Locality)">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/egov-location/_search (REVENUE - Locality)" enabled="true">
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&amp;boundaryType=Locality&amp;tenantId=${state_tenant}.${city_tenant}</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;ver&quot;: &quot;.01&quot;,&#xd;
+        &quot;action&quot;: &quot;_search&quot;,&#xd;
+        &quot;did&quot;: &quot;1&quot;,&#xd;
+        &quot;key&quot;: &quot;&quot;,&#xd;
+        &quot;msgId&quot;: &quot;20170310130900|en_IN&quot;,&#xd;
+        &quot;requesterId&quot;: &quot;&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="boundaries" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">boundaries</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.TenantBoundary[0].boundary[*] </stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="boundaries parser" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper
+
+def json = new JsonSlurper().parseText(vars.get(&quot;boundaries&quot;))
+
+// Store values into JMeter variables
+vars.put(&quot;boundaryArea&quot;, json.area ?: &quot;&quot;)
+vars.put(&quot;boundaryPincode&quot;, json.pincode ?: &quot;&quot;)
+vars.put(&quot;boundaryCode&quot;, json.code ?: &quot;&quot;)
+vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
+</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_create">
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">/property-services/property/_create?tenantId=${state_tenant}.${city_tenant}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;Property&quot;: {&#xd;
+    &quot;additionalDetails&quot;: {&#xd;
+      &quot;yearConstruction&quot;: &quot;${yearConstruction}&quot;,&#xd;
+      &quot;businessName&quot;: &quot;${businessName}&quot;&#xd;
+    },&#xd;
+    &quot;address&quot;: {&#xd;
+      &quot;city&quot;: &quot;Testing&quot;,&#xd;
+      &quot;doorNo&quot;: &quot;BD 123&quot;,&#xd;
+      &quot;locality&quot;: {&#xd;
+        &quot;code&quot;: &quot;${boundaryCode}&quot;,&#xd;
+        &quot;area&quot;: &quot;${boundaryArea}&quot;&#xd;
+      }&#xd;
+    },&#xd;
+    &quot;usageCategoryMinor&quot;: null,&#xd;
+    &quot;units&quot;: [&#xd;
+      {&#xd;
+        &quot;floorNo&quot;: &quot;0&quot;,&#xd;
+        &quot;occupancyType&quot;: &quot;${OccupancyType.code}&quot;,&#xd;
+        &quot;constructionDetail&quot;: {&#xd;
+          &quot;builtUpArea&quot;: 16.67&#xd;
+        },&#xd;
+        &quot;usageCategory&quot;: &quot;RESIDENTIAL&quot;&#xd;
+      }&#xd;
+    ],&#xd;
+    &quot;usageCategoryMajor&quot;: &quot;RESIDENTIAL&quot;,&#xd;
+    &quot;landArea&quot;: &quot;200&quot;,&#xd;
+    &quot;propertyType&quot;: &quot;${PropertyType.code}&quot;,&#xd;
+    &quot;noOfFloors&quot;: 1,&#xd;
+    &quot;ownershipCategory&quot;: &quot;INDIVIDUAL.SINGLEOWNER&quot;,&#xd;
+    &quot;owners&quot;: [&#xd;
+      {&#xd;
+        &quot;name&quot;: &quot;Dennis&quot;,&#xd;
+        &quot;mobileNumber&quot;: &quot;${mobileNumber}&quot;,&#xd;
+        &quot;fatherOrHusbandName&quot;: &quot;Markus&quot;,&#xd;
+        &quot;emailId&quot;: null,&#xd;
+        &quot;ownerShipPercentage&quot;: &quot;100&quot;,&#xd;
+        &quot;permanentAddress&quot;: &quot;BD 123, PB_TESTING_REVENUE_${boundaryCode}, ${city_tenant}&quot;,&#xd;
+        &quot;relationship&quot;: &quot;Father&quot;,&#xd;
+        &quot;ownerType&quot;: &quot;NONE&quot;,&#xd;
+        &quot;gender&quot;: &quot;Male&quot;,&#xd;
+        &quot;isCorrespondenceAddress&quot;: true&#xd;
+      }&#xd;
+    ],&#xd;
+    &quot;source&quot;: &quot;MUNICIPAL_RECORDS&quot;,&#xd;
+    &quot;channel&quot;: &quot;CFC_COUNTER&quot;,&#xd;
+    &quot;documents&quot;: [&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;OWNER.ADDRESSPROOF.ELECTRICITYBILL&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;OWNER.IDENTITYPROOF.DRIVING&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;OWNER.REGISTRATIONPROOF.COURTDECREE&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;OWNER.USAGEPROOF.ELECTRICITYBILL&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;OWNER.CONSTRUCTIONPROOF.BPACERTIFICATE&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+      }&#xd;
+    ],&#xd;
+    &quot;superBuiltUpArea&quot;: null,&#xd;
+    &quot;usageCategory&quot;: &quot;RESIDENTIAL&quot;,&#xd;
+    &quot;tenantId&quot;: &quot;${state_tenant}.${city_tenant}&quot;,&#xd;
+    &quot;creationReason&quot;: &quot;CREATE&quot;&#xd;
+  },&#xd;
+  &quot;RequestInfo&quot;: {&#xd;
+    &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+    &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
+    &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
+    &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
+    &quot;plainAccessRequest&quot;: {}&#xd;
+  }&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://${URL}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="propertyId" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">propertyId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].propertyId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">PropertyID NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="acknowldgementNumber" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">acknowldgementNumber</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].acknowldgementNumber</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller">
+            <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_search" enabled="true">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/property-services/property/_search?tenantId=${state_tenant}.${city_tenant}&amp;propertyIds=${propertyId}&amp;_=1757669330429</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
+        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
+        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
+        &quot;plainAccessRequest&quot;: {}&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="PropertyDetail" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">PropertyDetail</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0]</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">PropertyID NOT FOUND</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create &amp; Update Property" enabled="false">
+          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/egov-location/_search (REVENUE - Locality)" enabled="true">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&amp;boundaryType=Locality&amp;tenantId=${state_tenant}.${city_tenant}</stringProp>
@@ -3921,36 +4202,40 @@ vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&qu
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">https://unified-demo.digit.org/digit-ui/employee/pt/response</stringProp>
+                  <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://unified-demo.digit.org</stringProp>
+                  <stringProp name="Header.value">https://${URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="propertyId">
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="propertyId" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">propertyId</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].propertyId</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
               <stringProp name="JSONPostProcessor.defaultValues">PropertyID NOT FOUND</stringProp>
             </JSONPostProcessor>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="acknowldgementNumber">
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="acknowldgementNumber" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">acknowldgementNumber</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].acknowldgementNumber</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller">
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">20</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_search">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_search" enabled="true">
               <stringProp name="HTTPSampler.domain">${URL}</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.path">/property-services/property/_search?tenantId=${state_tenant}.${city_tenant}&amp;propertyIds=${propertyId}&amp;_=1757669330429</stringProp>
@@ -3988,11 +4273,11 @@ vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&qu
                   </elementProp>
                   <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">https://unified-demo.digit.org/digit-ui/employee/pt/response</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
                   </elementProp>
                   <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">https://unified-demo.digit.org</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
@@ -4005,13 +4290,103 @@ vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&qu
               </JSONPostProcessor>
               <hashTree/>
             </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_update" enabled="true">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/property-services/property/_update</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;Property&quot;: ${modifiedPropertyPayload},&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
+        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
+        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
+        &quot;plainAccessRequest&quot;: {}&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="propertyId" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">propertyId</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].propertyId</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">propertyId NOT FOUND</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+// 1. Read the saved JSON string from JMeter variable
+def originalJson = vars.get(&quot;PropertyDetail&quot;)
+
+// 2. Parse JSON into an object so we can work with it
+def parser = new JsonSlurper()
+def obj = parser.parseText(originalJson)
+
+// 3. Update only the workflow part
+obj.workflow = [
+    action: &quot;APPROVE&quot;,                // new action
+    comment: &quot;Verified in JMeter&quot;,    // optional comment
+    businessService: &quot;PT.CREATE&quot;,
+    businessId: &quot;${acknowldgementNumber}&quot;,
+    moduleName: &quot;PT&quot;,
+    assignes: []                      // keep empty or put values
+]
+
+// 4. Convert back into JSON string
+def newJson = JsonOutput.toJson(obj)
+
+// 5. Save into a new JMeter variable
+vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
+</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223PreProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create &amp; Update Property" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create &amp; Assess Property">
+          <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/egov-location/_search (REVENUE - Locality)" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/egov-location/_search (REVENUE - Locality)">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&amp;boundaryType=Locality&amp;tenantId=${state_tenant}.${city_tenant}</stringProp>
@@ -4041,7 +4416,7 @@ vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&qu
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">accept</stringProp>
@@ -4054,7 +4429,7 @@ vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&qu
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="boundaries" enabled="true">
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="boundaries">
               <stringProp name="JSONPostProcessor.referenceNames">boundaries</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.TenantBoundary[0].boundary[*] </stringProp>
               <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
@@ -4077,6 +4452,138 @@ vars.put(&quot;boundaryCode&quot;, json.code ?: &quot;&quot;)
 vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
 </stringProp>
             </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MDMS PropertyTax" enabled="true">
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">/egov-mdms-service/v1/_search?tenantId=${state_tenant}.${city_tenant}</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;ver&quot;: &quot;.01&quot;,&#xd;
+        &quot;ts&quot;: &quot;&quot;,&#xd;
+        &quot;action&quot;: &quot;_search&quot;,&#xd;
+        &quot;did&quot;: &quot;1&quot;,&#xd;
+        &quot;key&quot;: &quot;&quot;,&#xd;
+        &quot;msgId&quot;: &quot;20170310130900|en_IN&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
+    },&#xd;
+    &quot;MdmsCriteria&quot;: {&#xd;
+        &quot;tenantId&quot;: &quot;${state_tenant}&quot;,&#xd;
+        &quot;moduleDetails&quot;: [&#xd;
+            {&#xd;
+                &quot;moduleName&quot;: &quot;PropertyTax&quot;,&#xd;
+                &quot;masterDetails&quot;: [&#xd;
+                    {&#xd;
+                        &quot;name&quot;: &quot;OccupancyType&quot;&#xd;
+                    },&#xd;
+                    {&#xd;
+                        &quot;name&quot;: &quot;UsageCategory&quot;&#xd;
+                    },&#xd;
+                    {&#xd;
+                        &quot;name&quot;: &quot;UsageCategoryMajor&quot;&#xd;
+                    },&#xd;
+                    {&#xd;
+                        &quot;name&quot;: &quot;PropertyType&quot;&#xd;
+                    },&#xd;
+                    {&#xd;
+                        &quot;name&quot;: &quot;OwnerShipCategory&quot;&#xd;
+                    }&#xd;
+                ]&#xd;
+            }&#xd;
+        ]&#xd;
+    }&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="OccupancyType" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">OccupancyType</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.OccupancyType[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">OccupancyType NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="UsageCategory" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">UsageCategory</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.UsageCategory[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">UsageCategory NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="UsageCategoryMajor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">UsageCategoryMajor</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.UsageCategoryMajor[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">UsageCategoryMajor NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="PropertyType" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">PropertyType</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.PropertyType[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">PropertyType NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="OwnerShipCategory" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">OwnerShipCategory</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.OwnerShipCategory[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">OwnerShipCategory NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="mdms parser" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper
+
+def OccupancyType = new JsonSlurper().parseText(vars.get(&quot;OccupancyType&quot;))
+def UsageCategory = new JsonSlurper().parseText(vars.get(&quot;UsageCategory&quot;))
+def UsageCategoryMajor = new JsonSlurper().parseText(vars.get(&quot;UsageCategoryMajor&quot;))
+def PropertyType = new JsonSlurper().parseText(vars.get(&quot;PropertyType&quot;))
+def OwnerShipCategory = new JsonSlurper().parseText(vars.get(&quot;OwnerShipCategory&quot;))
+
+// Store values into JMeter variables
+vars.put(&quot;OccupancyType.code&quot;, OccupancyType.code ?: &quot;&quot;)
+vars.put(&quot;UsageCategory.code&quot;, UsageCategory.code ?: &quot;&quot;)
+vars.put(&quot;UsageCategoryMajor.code&quot;, UsageCategoryMajor.code ?: &quot;&quot;)
+vars.put(&quot;PropertyType.code&quot;, PropertyType.code ?: &quot;&quot;)
+vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&quot;)</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+              <boolProp name="displayJMeterProperties">false</boolProp>
+              <boolProp name="displayJMeterVariables">true</boolProp>
+              <boolProp name="displaySamplerProperties">true</boolProp>
+              <boolProp name="displaySystemProperties">false</boolProp>
+            </DebugPostProcessor>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_create">
@@ -4194,11 +4701,782 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">https://unified-demo.digit.org/digit-ui/employee/pt/response</stringProp>
+                  <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://unified-demo.digit.org</stringProp>
+                  <stringProp name="Header.value">https://${URL}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="propertyId" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">propertyId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].propertyId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">PropertyID NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="acknowldgementNumber" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">acknowldgementNumber</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].acknowldgementNumber</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+            <stringProp name="ConstantTimer.delay">20</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Update PT)">
+            <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_search">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/property-services/property/_search?tenantId=${state_tenant}.${city_tenant}&amp;propertyIds=${propertyId}&amp;_=1757669330429</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
+        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
+        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
+        &quot;plainAccessRequest&quot;: {}&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="PropertyDetail" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">PropertyDetail</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0]</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">PropertyID NOT FOUND</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_update">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/property-services/property/_update</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;Property&quot;: ${modifiedPropertyPayload},&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
+        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
+        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
+        &quot;plainAccessRequest&quot;: {}&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="propertyId">
+                <stringProp name="JSONPostProcessor.referenceNames">propertyId</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].propertyId</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">propertyId NOT FOUND</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+// 1. Read the saved JSON string from JMeter variable
+def originalJson = vars.get(&quot;PropertyDetail&quot;)
+
+// 2. Parse JSON into an object so we can work with it
+def parser = new JsonSlurper()
+def obj = parser.parseText(originalJson)
+
+// 3. Update only the workflow part
+obj.workflow = [
+    action: &quot;APPROVE&quot;,                // new action
+    comment: &quot;Verified in JMeter&quot;,    // optional comment
+    businessService: &quot;PT.CREATE&quot;,
+    businessId: &quot;${acknowldgementNumber}&quot;,
+    moduleName: &quot;PT&quot;,
+    assignes: []                      // keep empty or put values
+]
+
+// 4. Convert back into JSON string
+def newJson = JsonOutput.toJson(obj)
+
+// 5. Save into a new JMeter variable
+vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
+</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223PreProcessor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+            <stringProp name="ConstantTimer.delay">20</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Assess PT)">
+            <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/pt-calculator-v2/propertytax/v2/_estimate">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/pt-calculator-v2/propertytax/v2/_estimate?tenantId=${state_tenant}.${city_tenant}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;ver&quot;: &quot;.01&quot;,&#xd;
+        &quot;ts&quot;: &quot;&quot;,&#xd;
+        &quot;action&quot;: &quot;_estimate&quot;,&#xd;
+        &quot;did&quot;: &quot;1&quot;,&#xd;
+        &quot;key&quot;: &quot;&quot;,&#xd;
+        &quot;msgId&quot;: &quot;20170310130900|en_IN&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
+    },&#xd;
+    &quot;Assessment&quot;: {&#xd;
+        &quot;financialYear&quot;: &quot;2021-22&quot;,&#xd;
+        &quot;tenantId&quot;: &quot;${state_tenant}.${city_tenant}&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;${propertyId}&quot;,&#xd;
+        &quot;source&quot;: &quot;MUNICIPAL_RECORDS&quot;,&#xd;
+        &quot;channel&quot;: &quot;CFC_COUNTER&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/assessment/_create">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/property-services/assessment/_create?tenantId=${state_tenant}.${city_tenant}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;ver&quot;: &quot;.01&quot;,&#xd;
+        &quot;ts&quot;: &quot;&quot;,&#xd;
+        &quot;action&quot;: &quot;_estimate&quot;,&#xd;
+        &quot;did&quot;: &quot;1&quot;,&#xd;
+        &quot;key&quot;: &quot;&quot;,&#xd;
+        &quot;msgId&quot;: &quot;20170310130900|en_IN&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
+    },&#xd;
+    &quot;Assessment&quot;: {&#xd;
+        &quot;tenantId&quot;: &quot;${state_tenant}.${city_tenant}&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;${propertyId}&quot;,&#xd;
+        &quot;financialYear&quot;: &quot;2021-22&quot;,&#xd;
+        &quot;assessmentDate&quot;: 1759147958319,&#xd;
+        &quot;source&quot;: &quot;MUNICIPAL_RECORDS&quot;,&#xd;
+        &quot;channel&quot;: &quot;CFC_COUNTER&quot;,&#xd;
+        &quot;additionalDetails&quot;: {}&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/bill/v2/_fetchbill">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/billing-service/bill/v2/_fetchbill?consumerCode=${propertyId}&amp;tenantId=${state_tenant}.${city_tenant}&amp;businessService=${businessService}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Mihy&quot;,&#xd;
+        &quot;ver&quot;: &quot;.01&quot;,&#xd;
+        &quot;action&quot;: &quot;_create&quot;,&#xd;
+        &quot;did&quot;: &quot;1&quot;,&#xd;
+        &quot;key&quot;: &quot;&quot;,&#xd;
+        &quot;msgId&quot;: &quot;20170310130900|en_IN&quot;,&#xd;
+        &quot;requesterId&quot;: &quot;&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="mobileNumber">
+                <stringProp name="JSONPostProcessor.referenceNames">mobileNumber</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.Bill[0].mobileNumber</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="payerName">
+                <stringProp name="JSONPostProcessor.referenceNames">payerName</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.Bill[0].payerName</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="totalAmount">
+                <stringProp name="JSONPostProcessor.referenceNames">totalAmount</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.Bill[0].totalAmount</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="billId">
+                <stringProp name="JSONPostProcessor.referenceNames">billId</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.Bill[0].id</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/collection-services/payments/_create">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/collection-services/payments/_create</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Mihy&quot;,&#xd;
+        &quot;ver&quot;: &quot;.01&quot;,&#xd;
+        &quot;action&quot;: &quot;_create&quot;,&#xd;
+        &quot;did&quot;: &quot;1&quot;,&#xd;
+        &quot;key&quot;: &quot;&quot;,&#xd;
+        &quot;msgId&quot;: &quot;20170310130900|en_IN&quot;,&#xd;
+        &quot;requesterId&quot;: &quot;&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
+    },&#xd;
+    &quot;Payment&quot;: {&#xd;
+        &quot;paymentDetails&quot;: [&#xd;
+            {&#xd;
+                &quot;businessService&quot;: &quot;${businessService}&quot;,&#xd;
+                &quot;billId&quot;: &quot;${billId}&quot;,&#xd;
+                &quot;totalDue&quot;: ${totalAmount},&#xd;
+                &quot;totalAmountPaid&quot;: ${totalAmount}&#xd;
+            }&#xd;
+        ],&#xd;
+        &quot;tenantId&quot;: &quot;${state_tenant}.${city_tenant}&quot;,&#xd;
+        &quot;totalDue&quot;: ${totalAmount},&#xd;
+        &quot;paymentMode&quot;: &quot;Cash&quot;,&#xd;
+        &quot;paidBy&quot;: &quot;${payerName}&quot;,&#xd;
+        &quot;mobileNumber&quot;: &quot;${mobileNumber}&quot;,&#xd;
+        &quot;payerName&quot;: &quot;${payerName}&quot;,&#xd;
+        &quot;totalAmountPaid&quot;: ${totalAmount}&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create &amp; Transfer Property">
+          <boolProp name="TransactionController.parent">true</boolProp>
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/egov-location/_search (REVENUE - Locality)">
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&amp;boundaryType=Locality&amp;tenantId=${state_tenant}.${city_tenant}</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;ver&quot;: &quot;.01&quot;,&#xd;
+        &quot;action&quot;: &quot;_search&quot;,&#xd;
+        &quot;did&quot;: &quot;1&quot;,&#xd;
+        &quot;key&quot;: &quot;&quot;,&#xd;
+        &quot;msgId&quot;: &quot;20170310130900|en_IN&quot;,&#xd;
+        &quot;requesterId&quot;: &quot;&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="boundaries" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">boundaries</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.TenantBoundary[0].boundary[*] </stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="boundaries parser" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper
+
+def json = new JsonSlurper().parseText(vars.get(&quot;boundaries&quot;))
+
+// Store values into JMeter variables
+vars.put(&quot;boundaryArea&quot;, json.area ?: &quot;&quot;)
+vars.put(&quot;boundaryPincode&quot;, json.pincode ?: &quot;&quot;)
+vars.put(&quot;boundaryCode&quot;, json.code ?: &quot;&quot;)
+vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
+</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MDMS PropertyTax">
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">/egov-mdms-service/v1/_search?tenantId=${state_tenant}.${city_tenant}</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;ver&quot;: &quot;.01&quot;,&#xd;
+        &quot;ts&quot;: &quot;&quot;,&#xd;
+        &quot;action&quot;: &quot;_search&quot;,&#xd;
+        &quot;did&quot;: &quot;1&quot;,&#xd;
+        &quot;key&quot;: &quot;&quot;,&#xd;
+        &quot;msgId&quot;: &quot;20170310130900|en_IN&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;&#xd;
+    },&#xd;
+    &quot;MdmsCriteria&quot;: {&#xd;
+        &quot;tenantId&quot;: &quot;${state_tenant}&quot;,&#xd;
+        &quot;moduleDetails&quot;: [&#xd;
+            {&#xd;
+                &quot;moduleName&quot;: &quot;PropertyTax&quot;,&#xd;
+                &quot;masterDetails&quot;: [&#xd;
+                    {&#xd;
+                        &quot;name&quot;: &quot;OccupancyType&quot;&#xd;
+                    },&#xd;
+                    {&#xd;
+                        &quot;name&quot;: &quot;UsageCategory&quot;&#xd;
+                    },&#xd;
+                    {&#xd;
+                        &quot;name&quot;: &quot;UsageCategoryMajor&quot;&#xd;
+                    },&#xd;
+                    {&#xd;
+                        &quot;name&quot;: &quot;PropertyType&quot;&#xd;
+                    },&#xd;
+                    {&#xd;
+                        &quot;name&quot;: &quot;OwnerShipCategory&quot;&#xd;
+                    }&#xd;
+                ]&#xd;
+            }&#xd;
+        ]&#xd;
+    }&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="OccupancyType" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">OccupancyType</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.OccupancyType[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">OccupancyType NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="UsageCategory" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">UsageCategory</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.UsageCategory[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">UsageCategory NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="UsageCategoryMajor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">UsageCategoryMajor</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.UsageCategoryMajor[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">UsageCategoryMajor NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="PropertyType" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">PropertyType</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.PropertyType[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">PropertyType NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="OwnerShipCategory" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">OwnerShipCategory</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.OwnerShipCategory[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">OwnerShipCategory NOT FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="mdms parser" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper
+
+def OccupancyType = new JsonSlurper().parseText(vars.get(&quot;OccupancyType&quot;))
+def UsageCategory = new JsonSlurper().parseText(vars.get(&quot;UsageCategory&quot;))
+def UsageCategoryMajor = new JsonSlurper().parseText(vars.get(&quot;UsageCategoryMajor&quot;))
+def PropertyType = new JsonSlurper().parseText(vars.get(&quot;PropertyType&quot;))
+def OwnerShipCategory = new JsonSlurper().parseText(vars.get(&quot;OwnerShipCategory&quot;))
+
+// Store values into JMeter variables
+vars.put(&quot;OccupancyType.code&quot;, OccupancyType.code ?: &quot;&quot;)
+vars.put(&quot;UsageCategory.code&quot;, UsageCategory.code ?: &quot;&quot;)
+vars.put(&quot;UsageCategoryMajor.code&quot;, UsageCategoryMajor.code ?: &quot;&quot;)
+vars.put(&quot;PropertyType.code&quot;, PropertyType.code ?: &quot;&quot;)
+vars.put(&quot;OwnerShipCategory.code&quot;, OwnerShipCategory.code ?: &quot;&quot;)</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+              <boolProp name="displayJMeterProperties">false</boolProp>
+              <boolProp name="displayJMeterVariables">true</boolProp>
+              <boolProp name="displaySamplerProperties">true</boolProp>
+              <boolProp name="displaySystemProperties">false</boolProp>
+            </DebugPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_create">
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">/property-services/property/_create?tenantId=${state_tenant}.${city_tenant}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;Property&quot;: {&#xd;
+    &quot;additionalDetails&quot;: {&#xd;
+      &quot;yearConstruction&quot;: &quot;${yearConstruction}&quot;,&#xd;
+      &quot;businessName&quot;: &quot;${businessName}&quot;&#xd;
+    },&#xd;
+    &quot;address&quot;: {&#xd;
+      &quot;city&quot;: &quot;Testing&quot;,&#xd;
+      &quot;doorNo&quot;: &quot;BD 123&quot;,&#xd;
+      &quot;locality&quot;: {&#xd;
+        &quot;code&quot;: &quot;${boundaryCode}&quot;,&#xd;
+        &quot;area&quot;: &quot;${boundaryArea}&quot;&#xd;
+      }&#xd;
+    },&#xd;
+    &quot;usageCategoryMinor&quot;: null,&#xd;
+    &quot;units&quot;: [&#xd;
+      {&#xd;
+        &quot;floorNo&quot;: &quot;0&quot;,&#xd;
+        &quot;occupancyType&quot;: &quot;${OccupancyType.code}&quot;,&#xd;
+        &quot;constructionDetail&quot;: {&#xd;
+          &quot;builtUpArea&quot;: 16.67&#xd;
+        },&#xd;
+        &quot;usageCategory&quot;: &quot;RESIDENTIAL&quot;&#xd;
+      }&#xd;
+    ],&#xd;
+    &quot;usageCategoryMajor&quot;: &quot;RESIDENTIAL&quot;,&#xd;
+    &quot;landArea&quot;: &quot;200&quot;,&#xd;
+    &quot;propertyType&quot;: &quot;${PropertyType.code}&quot;,&#xd;
+    &quot;noOfFloors&quot;: 1,&#xd;
+    &quot;ownershipCategory&quot;: &quot;INDIVIDUAL.SINGLEOWNER&quot;,&#xd;
+    &quot;owners&quot;: [&#xd;
+      {&#xd;
+        &quot;name&quot;: &quot;Dennis&quot;,&#xd;
+        &quot;mobileNumber&quot;: &quot;${mobileNumber}&quot;,&#xd;
+        &quot;fatherOrHusbandName&quot;: &quot;Markus&quot;,&#xd;
+        &quot;emailId&quot;: null,&#xd;
+        &quot;ownerShipPercentage&quot;: &quot;100&quot;,&#xd;
+        &quot;permanentAddress&quot;: &quot;BD 123, PB_TESTING_REVENUE_${boundaryCode}, ${city_tenant}&quot;,&#xd;
+        &quot;relationship&quot;: &quot;Father&quot;,&#xd;
+        &quot;ownerType&quot;: &quot;NONE&quot;,&#xd;
+        &quot;gender&quot;: &quot;Male&quot;,&#xd;
+        &quot;isCorrespondenceAddress&quot;: true&#xd;
+      }&#xd;
+    ],&#xd;
+    &quot;source&quot;: &quot;MUNICIPAL_RECORDS&quot;,&#xd;
+    &quot;channel&quot;: &quot;CFC_COUNTER&quot;,&#xd;
+    &quot;documents&quot;: [&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;OWNER.ADDRESSPROOF.ELECTRICITYBILL&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;OWNER.IDENTITYPROOF.DRIVING&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;OWNER.REGISTRATIONPROOF.COURTDECREE&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;OWNER.USAGEPROOF.ELECTRICITYBILL&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+      },&#xd;
+      {&#xd;
+        &quot;documentType&quot;: &quot;OWNER.CONSTRUCTIONPROOF.BPACERTIFICATE&quot;,&#xd;
+        &quot;fileStoreId&quot;: &quot;${__P(fileStoreId)}&quot;,&#xd;
+        &quot;documentUid&quot;: &quot;${__P(fileStoreId)}&quot;&#xd;
+      }&#xd;
+    ],&#xd;
+    &quot;superBuiltUpArea&quot;: null,&#xd;
+    &quot;usageCategory&quot;: &quot;RESIDENTIAL&quot;,&#xd;
+    &quot;tenantId&quot;: &quot;${state_tenant}.${city_tenant}&quot;,&#xd;
+    &quot;creationReason&quot;: &quot;CREATE&quot;&#xd;
+  },&#xd;
+  &quot;RequestInfo&quot;: {&#xd;
+    &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+    &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
+    &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
+    &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
+    &quot;plainAccessRequest&quot;: {}&#xd;
+  }&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://${URL}</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -4221,7 +5499,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
             <stringProp name="ConstantTimer.delay">20</stringProp>
           </ConstantTimer>
           <hashTree/>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Update PT)">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
@@ -4265,11 +5543,11 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
                   </elementProp>
                   <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">https://unified-demo.digit.org/digit-ui/employee/pt/response</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
                   </elementProp>
                   <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">https://unified-demo.digit.org</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
@@ -4282,7 +5560,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
               </JSONPostProcessor>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_update" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_update">
               <stringProp name="HTTPSampler.domain">${URL}</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.path">/property-services/property/_update</stringProp>
@@ -4321,11 +5599,545 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
                   </elementProp>
                   <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">https://unified-demo.digit.org/digit-ui/employee/pt/response</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
                   </elementProp>
                   <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">https://unified-demo.digit.org</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="propertyId" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">propertyId</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.Properties[0].propertyId</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">propertyId NOT FOUND</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+// 1. Read the saved JSON string from JMeter variable
+def originalJson = vars.get(&quot;PropertyDetail&quot;)
+
+// 2. Parse JSON into an object so we can work with it
+def parser = new JsonSlurper()
+def obj = parser.parseText(originalJson)
+
+// 3. Update only the workflow part
+obj.workflow = [
+    action: &quot;APPROVE&quot;,                // new action
+    comment: &quot;Verified in JMeter&quot;,    // optional comment
+    businessService: &quot;PT.CREATE&quot;,
+    businessId: &quot;${acknowldgementNumber}&quot;,
+    moduleName: &quot;PT&quot;,
+    assignes: []                      // keep empty or put values
+]
+
+// 4. Convert back into JSON string
+def newJson = JsonOutput.toJson(obj)
+
+// 5. Save into a new JMeter variable
+vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
+</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223PreProcessor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">20</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Transfer PT)">
+            <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_update  (Transfer)">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/property-services/property/_update?tenantId=${state_tenant}.${city_tenant}&amp;propertyIds=${propertyId}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;ver&quot;: &quot;.01&quot;,&#xd;
+        &quot;action&quot;: &quot;_update&quot;,&#xd;
+        &quot;did&quot;: &quot;1&quot;,&#xd;
+        &quot;key&quot;: &quot;&quot;,&#xd;
+        &quot;msgId&quot;: &quot;20170310130900|en_IN&quot;,&#xd;
+        &quot;requesterId&quot;: &quot;&quot;,&#xd;
+        &quot;authToken&quot;: &quot;18fa104f-73f0-4b61-8683-707da29ca8ff&quot;&#xd;
+    },&#xd;
+    &quot;Property&quot;: {&#xd;
+        &quot;id&quot;: &quot;15be2561-3a79-49ee-af83-d10dd2c8b775&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;PT-1012-2498670&quot;,&#xd;
+        &quot;surveyId&quot;: null,&#xd;
+        &quot;linkedProperties&quot;: null,&#xd;
+        &quot;tenantId&quot;: &quot;pb.testing&quot;,&#xd;
+        &quot;accountId&quot;: &quot;6dbdf0cc-b585-43d1-9c33-0f79240425cd&quot;,&#xd;
+        &quot;oldPropertyId&quot;: null,&#xd;
+        &quot;status&quot;: &quot;ACTIVE&quot;,&#xd;
+        &quot;address&quot;: {&#xd;
+            &quot;tenantId&quot;: &quot;pb.testing&quot;,&#xd;
+            &quot;doorNo&quot;: &quot;BD 123&quot;,&#xd;
+            &quot;plotNo&quot;: null,&#xd;
+            &quot;id&quot;: &quot;80238fc1-a671-4339-a3ca-278bacd209df&quot;,&#xd;
+            &quot;landmark&quot;: null,&#xd;
+            &quot;city&quot;: &quot;Testing&quot;,&#xd;
+            &quot;district&quot;: null,&#xd;
+            &quot;region&quot;: null,&#xd;
+            &quot;state&quot;: null,&#xd;
+            &quot;country&quot;: null,&#xd;
+            &quot;pincode&quot;: null,&#xd;
+            &quot;buildingName&quot;: null,&#xd;
+            &quot;street&quot;: null,&#xd;
+            &quot;locality&quot;: {&#xd;
+                &quot;code&quot;: &quot;SC4&quot;,&#xd;
+                &quot;name&quot;: &quot;Bawian - B2 - A1&quot;,&#xd;
+                &quot;label&quot;: &quot;Locality&quot;,&#xd;
+                &quot;latitude&quot;: null,&#xd;
+                &quot;longitude&quot;: null,&#xd;
+                &quot;area&quot;: &quot;AREA1&quot;,&#xd;
+                &quot;children&quot;: [],&#xd;
+                &quot;materializedPath&quot;: null&#xd;
+            },&#xd;
+            &quot;geoLocation&quot;: {&#xd;
+                &quot;latitude&quot;: 0,&#xd;
+                &quot;longitude&quot;: 0&#xd;
+            },&#xd;
+            &quot;additionalDetails&quot;: null&#xd;
+        },&#xd;
+        &quot;acknowldgementNumber&quot;: &quot;AC-2025-09-30-2896444&quot;,&#xd;
+        &quot;propertyType&quot;: &quot;BUILTUP.INDEPENDENTPROPERTY&quot;,&#xd;
+        &quot;ownershipCategory&quot;: &quot;INDIVIDUAL.SINGLEOWNER&quot;,&#xd;
+        &quot;owners&quot;: [&#xd;
+            {&#xd;
+                &quot;id&quot;: null,&#xd;
+                &quot;uuid&quot;: &quot;dccf2a73-4ed9-45f8-a8f4-988c3b63b4c9&quot;,&#xd;
+                &quot;userName&quot;: &quot;6d06936d-c56a-44fd-ac72-16897fc51650&quot;,&#xd;
+                &quot;password&quot;: null,&#xd;
+                &quot;salutation&quot;: null,&#xd;
+                &quot;name&quot;: &quot;Dennis&quot;,&#xd;
+                &quot;gender&quot;: &quot;MALE&quot;,&#xd;
+                &quot;mobileNumber&quot;: &quot;9876543210&quot;,&#xd;
+                &quot;emailId&quot;: null,&#xd;
+                &quot;altContactNumber&quot;: null,&#xd;
+                &quot;pan&quot;: null,&#xd;
+                &quot;aadhaarNumber&quot;: null,&#xd;
+                &quot;permanentAddress&quot;: &quot;BD 123, PB_TESTING_REVENUE_SC4, testing&quot;,&#xd;
+                &quot;permanentCity&quot;: null,&#xd;
+                &quot;permanentPinCode&quot;: null,&#xd;
+                &quot;correspondenceCity&quot;: null,&#xd;
+                &quot;correspondencePinCode&quot;: null,&#xd;
+                &quot;correspondenceAddress&quot;: null,&#xd;
+                &quot;active&quot;: true,&#xd;
+                &quot;dob&quot;: null,&#xd;
+                &quot;pwdExpiryDate&quot;: 1836996271000,&#xd;
+                &quot;locale&quot;: null,&#xd;
+                &quot;type&quot;: &quot;CITIZEN&quot;,&#xd;
+                &quot;signature&quot;: null,&#xd;
+                &quot;accountLocked&quot;: false,&#xd;
+                &quot;roles&quot;: [&#xd;
+                    {&#xd;
+                        &quot;id&quot;: null,&#xd;
+                        &quot;name&quot;: &quot;Citizen&quot;,&#xd;
+                        &quot;code&quot;: &quot;CITIZEN&quot;,&#xd;
+                        &quot;tenantId&quot;: &quot;pb&quot;&#xd;
+                    }&#xd;
+                ],&#xd;
+                &quot;fatherOrHusbandName&quot;: &quot;Markus&quot;,&#xd;
+                &quot;bloodGroup&quot;: null,&#xd;
+                &quot;identificationMark&quot;: null,&#xd;
+                &quot;photo&quot;: null,&#xd;
+                &quot;createdBy&quot;: &quot;2398&quot;,&#xd;
+                &quot;createdDate&quot;: 1759236272000,&#xd;
+                &quot;lastModifiedBy&quot;: &quot;2398&quot;,&#xd;
+                &quot;lastModifiedDate&quot;: 1759236272000,&#xd;
+                &quot;tenantId&quot;: &quot;pb&quot;,&#xd;
+                &quot;alternatemobilenumber&quot;: null,&#xd;
+                &quot;ownerInfoUuid&quot;: &quot;1c641927-77f8-4838-81f5-7c3b9f34527a&quot;,&#xd;
+                &quot;isPrimaryOwner&quot;: null,&#xd;
+                &quot;ownerShipPercentage&quot;: 100,&#xd;
+                &quot;ownerType&quot;: &quot;NONE&quot;,&#xd;
+                &quot;institutionId&quot;: null,&#xd;
+                &quot;status&quot;: &quot;INACTIVE&quot;,&#xd;
+                &quot;documents&quot;: null,&#xd;
+                &quot;additionalDetails&quot;: null,&#xd;
+                &quot;relationship&quot;: &quot;Father&quot;,&#xd;
+                &quot;documentUid&quot;: &quot;NA&quot;,&#xd;
+                &quot;documentType&quot;: &quot;NA&quot;&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;id&quot;: null,&#xd;
+                &quot;uuid&quot;: &quot;9ffd6704-5912-4c4a-9790-9e4f4bbaa024&quot;,&#xd;
+                &quot;userName&quot;: &quot;b6b7583f-8b7d-4c67-bbeb-5eb223482055&quot;,&#xd;
+                &quot;password&quot;: null,&#xd;
+                &quot;salutation&quot;: null,&#xd;
+                &quot;name&quot;: &quot;Dennis&quot;,&#xd;
+                &quot;gender&quot;: &quot;MALE&quot;,&#xd;
+                &quot;mobileNumber&quot;: &quot;9876543210&quot;,&#xd;
+                &quot;emailId&quot;: null,&#xd;
+                &quot;altContactNumber&quot;: null,&#xd;
+                &quot;pan&quot;: null,&#xd;
+                &quot;aadhaarNumber&quot;: null,&#xd;
+                &quot;permanentAddress&quot;: &quot;BD 123, PB_TESTING_REVENUE_SC4, testing&quot;,&#xd;
+                &quot;permanentCity&quot;: null,&#xd;
+                &quot;permanentPinCode&quot;: null,&#xd;
+                &quot;correspondenceCity&quot;: null,&#xd;
+                &quot;correspondencePinCode&quot;: null,&#xd;
+                &quot;correspondenceAddress&quot;: null,&#xd;
+                &quot;active&quot;: true,&#xd;
+                &quot;dob&quot;: null,&#xd;
+                &quot;pwdExpiryDate&quot;: 1836996271000,&#xd;
+                &quot;locale&quot;: null,&#xd;
+                &quot;type&quot;: &quot;CITIZEN&quot;,&#xd;
+                &quot;signature&quot;: null,&#xd;
+                &quot;accountLocked&quot;: false,&#xd;
+                &quot;roles&quot;: [&#xd;
+                    {&#xd;
+                        &quot;id&quot;: null,&#xd;
+                        &quot;name&quot;: &quot;Citizen&quot;,&#xd;
+                        &quot;code&quot;: &quot;CITIZEN&quot;,&#xd;
+                        &quot;tenantId&quot;: &quot;pb&quot;&#xd;
+                    }&#xd;
+                ],&#xd;
+                &quot;fatherOrHusbandName&quot;: &quot;Markus&quot;,&#xd;
+                &quot;bloodGroup&quot;: null,&#xd;
+                &quot;identificationMark&quot;: null,&#xd;
+                &quot;photo&quot;: null,&#xd;
+                &quot;createdBy&quot;: &quot;2398&quot;,&#xd;
+                &quot;createdDate&quot;: 1759236271000,&#xd;
+                &quot;lastModifiedBy&quot;: &quot;2398&quot;,&#xd;
+                &quot;lastModifiedDate&quot;: 1759236271000,&#xd;
+                &quot;tenantId&quot;: &quot;pb&quot;,&#xd;
+                &quot;alternatemobilenumber&quot;: null,&#xd;
+                &quot;ownerInfoUuid&quot;: &quot;1c641927-77f8-4838-81f5-7c3b9f34527a&quot;,&#xd;
+                &quot;isPrimaryOwner&quot;: null,&#xd;
+                &quot;ownerShipPercentage&quot;: 100,&#xd;
+                &quot;ownerType&quot;: &quot;NONE&quot;,&#xd;
+                &quot;institutionId&quot;: null,&#xd;
+                &quot;status&quot;: &quot;INACTIVE&quot;,&#xd;
+                &quot;documents&quot;: null,&#xd;
+                &quot;additionalDetails&quot;: null,&#xd;
+                &quot;relationship&quot;: &quot;Father&quot;,&#xd;
+                &quot;documentUid&quot;: &quot;NA&quot;,&#xd;
+                &quot;documentType&quot;: &quot;NA&quot;&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;name&quot;: &quot;Donald&quot;,&#xd;
+                &quot;gender&quot;: &quot;MALE&quot;,&#xd;
+                &quot;mobileNumber&quot;: &quot;9876543211&quot;,&#xd;
+                &quot;fatherOrHusbandName&quot;: &quot;Duck&quot;,&#xd;
+                &quot;ownerShipPercentage&quot;: &quot;100&quot;,&#xd;
+                &quot;relationship&quot;: &quot;FATHER&quot;,&#xd;
+                &quot;documentType&quot;: &quot;&quot;,&#xd;
+                &quot;ownerType&quot;: &quot;NONE&quot;,&#xd;
+                &quot;documentUid&quot;: &quot;&quot;,&#xd;
+                &quot;permanentAddress&quot;: &quot;ST 123&quot;,&#xd;
+                &quot;status&quot;: &quot;ACTIVE&quot;&#xd;
+            }&#xd;
+        ],&#xd;
+        &quot;institution&quot;: null,&#xd;
+        &quot;creationReason&quot;: &quot;MUTATION&quot;,&#xd;
+        &quot;usageCategory&quot;: &quot;RESIDENTIAL&quot;,&#xd;
+        &quot;noOfFloors&quot;: 1,&#xd;
+        &quot;landArea&quot;: 200,&#xd;
+        &quot;superBuiltUpArea&quot;: null,&#xd;
+        &quot;source&quot;: &quot;MUNICIPAL_RECORDS&quot;,&#xd;
+        &quot;channel&quot;: &quot;CFC_COUNTER&quot;,&#xd;
+        &quot;isactive&quot;: false,&#xd;
+        &quot;isinactive&quot;: false,&#xd;
+        &quot;documents&quot;: [&#xd;
+            {&#xd;
+                &quot;documentType&quot;: &quot;OWNER.ADDRESSPROOF.ELECTRICITYBILL&quot;,&#xd;
+                &quot;fileStoreId&quot;: &quot;ed94272c-b598-4e0f-961f-2fe9666dfc5f&quot;,&#xd;
+                &quot;documentUid&quot;: &quot;ed94272c-b598-4e0f-961f-2fe9666dfc5f&quot;,&#xd;
+                &quot;auditDetails&quot;: null,&#xd;
+                &quot;status&quot;: &quot;ACTIVE&quot;&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;documentType&quot;: &quot;OWNER.IDENTITYPROOF.AADHAAR&quot;,&#xd;
+                &quot;fileStoreId&quot;: &quot;eaedf45b-f24d-4490-b1c7-a704910dc86a&quot;,&#xd;
+                &quot;documentUid&quot;: &quot;eaedf45b-f24d-4490-b1c7-a704910dc86a&quot;,&#xd;
+                &quot;auditDetails&quot;: null,&#xd;
+                &quot;status&quot;: &quot;ACTIVE&quot;&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;documentType&quot;: &quot;FAMILYSETTLEMENT&quot;,&#xd;
+                &quot;fileStoreId&quot;: &quot;ddbb3992-a69d-4fec-8a10-1d4aea14c3ea&quot;,&#xd;
+                &quot;documentUid&quot;: &quot;ddbb3992-a69d-4fec-8a10-1d4aea14c3ea&quot;,&#xd;
+                &quot;auditDetails&quot;: null,&#xd;
+                &quot;status&quot;: &quot;ACTIVE&quot;&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;id&quot;: &quot;20dd05a4-8376-4d07-8fa6-63d4fb81d823&quot;,&#xd;
+                &quot;documentType&quot;: &quot;OWNER.USAGEPROOF.ELECTRICITYBILL&quot;,&#xd;
+                &quot;fileStoreId&quot;: &quot;c9cfdb7d-b9c8-4318-af71-4d4d6e877065&quot;,&#xd;
+                &quot;documentUid&quot;: &quot;c9cfdb7d-b9c8-4318-af71-4d4d6e877065&quot;,&#xd;
+                &quot;auditDetails&quot;: null,&#xd;
+                &quot;status&quot;: &quot;ACTIVE&quot;&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;id&quot;: &quot;aaa6eb3a-c570-448f-9d90-2bbf180ff49b&quot;,&#xd;
+                &quot;documentType&quot;: &quot;OWNER.CONSTRUCTIONPROOF.BPACERTIFICATE&quot;,&#xd;
+                &quot;fileStoreId&quot;: &quot;c9cfdb7d-b9c8-4318-af71-4d4d6e877065&quot;,&#xd;
+                &quot;documentUid&quot;: &quot;c9cfdb7d-b9c8-4318-af71-4d4d6e877065&quot;,&#xd;
+                &quot;auditDetails&quot;: null,&#xd;
+                &quot;status&quot;: &quot;ACTIVE&quot;&#xd;
+            }&#xd;
+        ],&#xd;
+        &quot;units&quot;: [&#xd;
+            {&#xd;
+                &quot;id&quot;: &quot;870c85d4-7c3c-4c25-9f30-cdf22709425c&quot;,&#xd;
+                &quot;tenantId&quot;: null,&#xd;
+                &quot;floorNo&quot;: 0,&#xd;
+                &quot;unitType&quot;: null,&#xd;
+                &quot;usageCategory&quot;: &quot;RESIDENTIAL&quot;,&#xd;
+                &quot;occupancyType&quot;: &quot;UNOCCUPIED&quot;,&#xd;
+                &quot;occupancyName&quot;: &quot;Unoccupied&quot;,&#xd;
+                &quot;active&quot;: true,&#xd;
+                &quot;occupancyDate&quot;: 0,&#xd;
+                &quot;constructionDetail&quot;: {&#xd;
+                    &quot;carpetArea&quot;: null,&#xd;
+                    &quot;builtUpArea&quot;: 16.67,&#xd;
+                    &quot;plinthArea&quot;: null,&#xd;
+                    &quot;superBuiltUpArea&quot;: null,&#xd;
+                    &quot;constructionType&quot;: null,&#xd;
+                    &quot;constructionDate&quot;: null,&#xd;
+                    &quot;dimensions&quot;: null&#xd;
+                },&#xd;
+                &quot;additionalDetails&quot;: null,&#xd;
+                &quot;auditDetails&quot;: null,&#xd;
+                &quot;arv&quot;: null&#xd;
+            }&#xd;
+        ],&#xd;
+        &quot;dueAmount&quot;: null,&#xd;
+        &quot;dueAmountYear&quot;: null,&#xd;
+        &quot;additionalDetails&quot;: {&#xd;
+            &quot;reasonForTransfer&quot;: &quot;FAMILYSETTLEMENT&quot;,&#xd;
+            &quot;marketValue&quot;: &quot;2000000&quot;,&#xd;
+            &quot;documentNumber&quot;: &quot;894998&quot;,&#xd;
+            &quot;documentDate&quot;: 1759256999000,&#xd;
+            &quot;documentValue&quot;: &quot;2000000&quot;,&#xd;
+            &quot;remarks&quot;: &quot;Transfer of Owner&quot;&#xd;
+        },&#xd;
+        &quot;auditDetails&quot;: {&#xd;
+            &quot;createdBy&quot;: &quot;6dbdf0cc-b585-43d1-9c33-0f79240425cd&quot;,&#xd;
+            &quot;lastModifiedBy&quot;: &quot;6dbdf0cc-b585-43d1-9c33-0f79240425cd&quot;,&#xd;
+            &quot;createdTime&quot;: 1759236271298,&#xd;
+            &quot;lastModifiedTime&quot;: 1759236272270&#xd;
+        },&#xd;
+        &quot;workflow&quot;: {&#xd;
+            &quot;businessService&quot;: &quot;PT.MUTATION&quot;,&#xd;
+            &quot;tenantId&quot;: &quot;pb.testing&quot;,&#xd;
+            &quot;action&quot;: &quot;OPEN&quot;,&#xd;
+            &quot;moduleName&quot;: &quot;PT&quot;&#xd;
+        },&#xd;
+        &quot;AlternateUpdated&quot;: false,&#xd;
+        &quot;isOldDataEncryptionRequest&quot;: false,&#xd;
+        &quot;ownersInit&quot;: [&#xd;
+            {&#xd;
+                &quot;id&quot;: null,&#xd;
+                &quot;uuid&quot;: &quot;dccf2a73-4ed9-45f8-a8f4-988c3b63b4c9&quot;,&#xd;
+                &quot;userName&quot;: &quot;6d06936d-c56a-44fd-ac72-16897fc51650&quot;,&#xd;
+                &quot;password&quot;: null,&#xd;
+                &quot;salutation&quot;: null,&#xd;
+                &quot;name&quot;: &quot;Dennis&quot;,&#xd;
+                &quot;gender&quot;: &quot;MALE&quot;,&#xd;
+                &quot;mobileNumber&quot;: &quot;9876543210&quot;,&#xd;
+                &quot;emailId&quot;: null,&#xd;
+                &quot;altContactNumber&quot;: null,&#xd;
+                &quot;pan&quot;: null,&#xd;
+                &quot;aadhaarNumber&quot;: null,&#xd;
+                &quot;permanentAddress&quot;: &quot;BD 123, PB_TESTING_REVENUE_SC4, testing&quot;,&#xd;
+                &quot;permanentCity&quot;: null,&#xd;
+                &quot;permanentPinCode&quot;: null,&#xd;
+                &quot;correspondenceCity&quot;: null,&#xd;
+                &quot;correspondencePinCode&quot;: null,&#xd;
+                &quot;correspondenceAddress&quot;: null,&#xd;
+                &quot;active&quot;: true,&#xd;
+                &quot;dob&quot;: null,&#xd;
+                &quot;pwdExpiryDate&quot;: 1836996271000,&#xd;
+                &quot;locale&quot;: null,&#xd;
+                &quot;type&quot;: &quot;CITIZEN&quot;,&#xd;
+                &quot;signature&quot;: null,&#xd;
+                &quot;accountLocked&quot;: false,&#xd;
+                &quot;roles&quot;: [&#xd;
+                    {&#xd;
+                        &quot;id&quot;: null,&#xd;
+                        &quot;name&quot;: &quot;Citizen&quot;,&#xd;
+                        &quot;code&quot;: &quot;CITIZEN&quot;,&#xd;
+                        &quot;tenantId&quot;: &quot;pb&quot;&#xd;
+                    }&#xd;
+                ],&#xd;
+                &quot;fatherOrHusbandName&quot;: &quot;Markus&quot;,&#xd;
+                &quot;bloodGroup&quot;: null,&#xd;
+                &quot;identificationMark&quot;: null,&#xd;
+                &quot;photo&quot;: null,&#xd;
+                &quot;createdBy&quot;: &quot;2398&quot;,&#xd;
+                &quot;createdDate&quot;: 1759236272000,&#xd;
+                &quot;lastModifiedBy&quot;: &quot;2398&quot;,&#xd;
+                &quot;lastModifiedDate&quot;: 1759236272000,&#xd;
+                &quot;tenantId&quot;: &quot;pb&quot;,&#xd;
+                &quot;alternatemobilenumber&quot;: null,&#xd;
+                &quot;ownerInfoUuid&quot;: &quot;1c641927-77f8-4838-81f5-7c3b9f34527a&quot;,&#xd;
+                &quot;isPrimaryOwner&quot;: null,&#xd;
+                &quot;ownerShipPercentage&quot;: 100,&#xd;
+                &quot;ownerType&quot;: &quot;NONE&quot;,&#xd;
+                &quot;institutionId&quot;: null,&#xd;
+                &quot;status&quot;: &quot;INACTIVE&quot;,&#xd;
+                &quot;documents&quot;: null,&#xd;
+                &quot;additionalDetails&quot;: null,&#xd;
+                &quot;relationship&quot;: &quot;Father&quot;,&#xd;
+                &quot;documentUid&quot;: &quot;NA&quot;,&#xd;
+                &quot;documentType&quot;: &quot;NA&quot;&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;id&quot;: null,&#xd;
+                &quot;uuid&quot;: &quot;9ffd6704-5912-4c4a-9790-9e4f4bbaa024&quot;,&#xd;
+                &quot;userName&quot;: &quot;b6b7583f-8b7d-4c67-bbeb-5eb223482055&quot;,&#xd;
+                &quot;password&quot;: null,&#xd;
+                &quot;salutation&quot;: null,&#xd;
+                &quot;name&quot;: &quot;Dennis&quot;,&#xd;
+                &quot;gender&quot;: &quot;MALE&quot;,&#xd;
+                &quot;mobileNumber&quot;: &quot;9876543210&quot;,&#xd;
+                &quot;emailId&quot;: null,&#xd;
+                &quot;altContactNumber&quot;: null,&#xd;
+                &quot;pan&quot;: null,&#xd;
+                &quot;aadhaarNumber&quot;: null,&#xd;
+                &quot;permanentAddress&quot;: &quot;BD 123, PB_TESTING_REVENUE_SC4, testing&quot;,&#xd;
+                &quot;permanentCity&quot;: null,&#xd;
+                &quot;permanentPinCode&quot;: null,&#xd;
+                &quot;correspondenceCity&quot;: null,&#xd;
+                &quot;correspondencePinCode&quot;: null,&#xd;
+                &quot;correspondenceAddress&quot;: null,&#xd;
+                &quot;active&quot;: true,&#xd;
+                &quot;dob&quot;: null,&#xd;
+                &quot;pwdExpiryDate&quot;: 1836996271000,&#xd;
+                &quot;locale&quot;: null,&#xd;
+                &quot;type&quot;: &quot;CITIZEN&quot;,&#xd;
+                &quot;signature&quot;: null,&#xd;
+                &quot;accountLocked&quot;: false,&#xd;
+                &quot;roles&quot;: [&#xd;
+                    {&#xd;
+                        &quot;id&quot;: null,&#xd;
+                        &quot;name&quot;: &quot;Citizen&quot;,&#xd;
+                        &quot;code&quot;: &quot;CITIZEN&quot;,&#xd;
+                        &quot;tenantId&quot;: &quot;pb&quot;&#xd;
+                    }&#xd;
+                ],&#xd;
+                &quot;fatherOrHusbandName&quot;: &quot;Markus&quot;,&#xd;
+                &quot;bloodGroup&quot;: null,&#xd;
+                &quot;identificationMark&quot;: null,&#xd;
+                &quot;photo&quot;: null,&#xd;
+                &quot;createdBy&quot;: &quot;2398&quot;,&#xd;
+                &quot;createdDate&quot;: 1759236271000,&#xd;
+                &quot;lastModifiedBy&quot;: &quot;2398&quot;,&#xd;
+                &quot;lastModifiedDate&quot;: 1759236271000,&#xd;
+                &quot;tenantId&quot;: &quot;pb&quot;,&#xd;
+                &quot;alternatemobilenumber&quot;: null,&#xd;
+                &quot;ownerInfoUuid&quot;: &quot;1c641927-77f8-4838-81f5-7c3b9f34527a&quot;,&#xd;
+                &quot;isPrimaryOwner&quot;: null,&#xd;
+                &quot;ownerShipPercentage&quot;: 100,&#xd;
+                &quot;ownerType&quot;: &quot;NONE&quot;,&#xd;
+                &quot;institutionId&quot;: null,&#xd;
+                &quot;status&quot;: &quot;INACTIVE&quot;,&#xd;
+                &quot;documents&quot;: null,&#xd;
+                &quot;additionalDetails&quot;: null,&#xd;
+                &quot;relationship&quot;: &quot;Father&quot;,&#xd;
+                &quot;documentUid&quot;: &quot;NA&quot;,&#xd;
+                &quot;documentType&quot;: &quot;NA&quot;&#xd;
+            }&#xd;
+        ],&#xd;
+        &quot;ownershipCategoryInit&quot;: &quot;INDIVIDUAL.SINGLEOWNER&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/property-services/property/_update (Transfer Approve)">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/property-services/property/_update</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;Property&quot;: ${modifiedPropertyPayload},&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
+        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
+        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
+        &quot;plainAccessRequest&quot;: {}&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
@@ -4374,7 +6186,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group: Billing Service">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group: Billing Service" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -4395,7 +6207,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
           </collectionProp>
         </Arguments>
         <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -4432,7 +6244,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table">
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -4469,7 +6281,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -4506,7 +6318,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -4543,7 +6355,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/taxheads/_search">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/taxheads/_search" enabled="true">
           <stringProp name="HTTPSampler.domain">${URL}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/billing-service/taxheads/_search?tenantId=${state_tenant}.${city_tenant}&amp;businessService=${businessService}</stringProp>
@@ -4588,7 +6400,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/taxperiods/_search">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/taxperiods/_search" enabled="true">
           <stringProp name="HTTPSampler.domain">${URL}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/billing-service/taxperiods/_search?tenantId=${state_tenant}.${city_tenant}&amp;service=${businessService}</stringProp>
@@ -4633,7 +6445,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/businessservices/_search">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/businessservices/_search" enabled="true">
           <stringProp name="HTTPSampler.domain">${URL}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/billing-service/businessservices/_search?tenantId=${state_tenant}.${city_tenant}&amp;businessService=${businessService}</stringProp>
@@ -4678,7 +6490,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/demand/_create">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/billing-service/demand/_create" enabled="true">
           <stringProp name="HTTPSampler.domain">${URL}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/billing-service/demand/_create</stringProp>
