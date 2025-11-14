@@ -5,6 +5,8 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder">
@@ -30,7 +32,7 @@
         <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
       </ProxyControl>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Login Variables">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Login Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="username" elementType="Argument">
             <stringProp name="Argument.name">username</stringProp>
@@ -80,7 +82,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -117,7 +119,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table">
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -154,7 +156,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -191,7 +193,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -239,7 +241,7 @@
         </elementProp>
       </SetupThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/oauth/token (Setup)">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/oauth/token (Setup)" enabled="true">
           <stringProp name="HTTPSampler.domain">${URL}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -296,7 +298,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="Sec-Fetch-Mode" elementType="Header">
                 <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
@@ -359,7 +361,7 @@
             <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
           </JSONPostProcessor>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -376,7 +378,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/filestore/v1/files">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/filestore/v1/files" enabled="true">
           <stringProp name="HTTPSampler.domain">${URL}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -500,7 +502,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/localization/messages/v1/_search">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/localization/messages/v1/_search" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -575,7 +577,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/localization/messages/v1/_upsert">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/localization/messages/v1/_upsert" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -665,7 +667,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v1/_count">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v1/_count" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -761,7 +763,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/schema/v1/_search">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/schema/v1/_search" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -844,7 +846,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_search (common-masters.Department)">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_search (common-masters.Department)" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -923,7 +925,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_search (RAINMAKER-PGR.ServiceDefs)">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_search (RAINMAKER-PGR.ServiceDefs)" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -1002,7 +1004,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_update/common-masters.Department">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_update/common-masters.Department" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -1099,7 +1101,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_create/common-masters.Department">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_create/common-masters.Department" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -1139,7 +1141,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Sec-Fetch-Mode" elementType="Header">
                   <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
@@ -1188,7 +1190,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
               <stringProp name="cacheKey">true</stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
@@ -1240,7 +1242,7 @@ log.info(&quot;Assigned unique random number: ${chosen}&quot;)
             </JSR223PreProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_create/RAINMAKER-PGR.ServiceDefs">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_create/RAINMAKER-PGR.ServiceDefs" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -1284,7 +1286,7 @@ log.info(&quot;Assigned unique random number: ${chosen}&quot;)
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Sec-Fetch-Mode" elementType="Header">
                   <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
@@ -1333,7 +1335,7 @@ log.info(&quot;Assigned unique random number: ${chosen}&quot;)
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
               <stringProp name="cacheKey">true</stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
@@ -1385,7 +1387,7 @@ log.info(&quot;Assigned unique random number: ${chosen}&quot;)
             </JSR223PreProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_update/RAINMAKER-PGR.ServiceDefs">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/mdms-v2/v2/_update/RAINMAKER-PGR.ServiceDefs" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>

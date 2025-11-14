@@ -36,7 +36,7 @@
         <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
       </ProxyControl>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Login Variables" enabled="true">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Login Variables">
         <collectionProp name="Arguments.arguments">
           <elementProp name="username" elementType="Argument">
             <stringProp name="Argument.name">username</stringProp>
@@ -60,7 +60,7 @@
           </elementProp>
           <elementProp name="URL" elementType="Argument">
             <stringProp name="Argument.name">URL</stringProp>
-            <stringProp name="Argument.value">sandbox-prod.digit.org</stringProp>
+            <stringProp name="Argument.value">sandbox.digit.org</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="city_tenant" elementType="Argument">
@@ -75,7 +75,7 @@
           </elementProp>
           <elementProp name="authToken" elementType="Argument">
             <stringProp name="Argument.name">authToken</stringProp>
-            <stringProp name="Argument.value">ce00c1bd-5fdd-42e7-b016-014fd3c5c265</stringProp>
+            <stringProp name="Argument.value">ea01f6bb-fbad-493b-b162-e6fc2271fe80</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="userInfo" elementType="Argument">
@@ -265,7 +265,6 @@
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/user/oauth/token</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
@@ -397,12 +396,11 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
           </DebugPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/filestore/v1/files" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/filestore/v1/files">
           <stringProp name="HTTPSampler.domain">${URL}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/filestore/v1/files?tenantId=${state_tenant}</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
@@ -503,12 +501,11 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/oauth/token (Citizen)" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/oauth/token (Citizen)" enabled="false">
           <stringProp name="HTTPSampler.domain">${URL}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/user/oauth/token</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
@@ -645,7 +642,7 @@ props.put(&quot;c_ReqInfo&quot;, vars.get(&quot;c_ReqInfo&quot;))</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="PGR Variables" enabled="true">
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="PGR Variables">
           <collectionProp name="Arguments.arguments">
             <elementProp name="audit" elementType="Argument">
               <stringProp name="Argument.name">audit</stringProp>
@@ -1164,12 +1161,11 @@ props.put(&quot;c_ReqInfo&quot;, vars.get(&quot;c_ReqInfo&quot;))</stringProp>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PGR Create (Employee)">
-            <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
             <stringProp name="HTTPSampler.path">/pgr-services/v2/request/_create?tenantId=${sandboxTenant}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1291,12 +1287,11 @@ props.put(&quot;c_ReqInfo&quot;, vars.get(&quot;c_ReqInfo&quot;))</stringProp>
           </IfController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/pgr-services/v2/request/_search">
-              <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
               <stringProp name="HTTPSampler.port">443</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
               <stringProp name="HTTPSampler.path">/pgr-services/v2/request/_search?tenantId=${sandboxTenant}&amp;serviceRequestId=${serviceRequestId}</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1317,7 +1312,7 @@ props.put(&quot;c_ReqInfo&quot;, vars.get(&quot;c_ReqInfo&quot;))</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Sec-Fetch-Mode" elementType="Header">
                     <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
@@ -1380,6 +1375,10 @@ props.put(&quot;c_ReqInfo&quot;, vars.get(&quot;c_ReqInfo&quot;))</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
               </JSONPostProcessor>
               <hashTree/>
+              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+                <stringProp name="ConstantTimer.delay">2000</stringProp>
+              </ConstantTimer>
+              <hashTree/>
             </hashTree>
           </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Update-ASSIGN)">
@@ -1389,12 +1388,11 @@ props.put(&quot;c_ReqInfo&quot;, vars.get(&quot;c_ReqInfo&quot;))</stringProp>
           </IfController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/pgr-services/v2/request/_update (ASSIGN)">
-              <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
               <stringProp name="HTTPSampler.port">443</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
               <stringProp name="HTTPSampler.path">/pgr-services/v2/request/_update</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1490,13 +1488,13 @@ props.put(&quot;c_ReqInfo&quot;, vars.get(&quot;c_ReqInfo&quot;))</stringProp>
               <hashTree/>
             </hashTree>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Update-RESOLVE)">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Update-RESOLVE)" enabled="false">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/pgr-services/v2/request/_update (RESOLVE)">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/pgr-services/v2/request/_update (RESOLVE)" enabled="true">
               <stringProp name="HTTPSampler.domain">sandbox-prod.digit.org</stringProp>
               <stringProp name="HTTPSampler.port">443</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>

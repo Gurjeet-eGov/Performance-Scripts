@@ -3168,7 +3168,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -3593,7 +3593,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create &amp; Search Property" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create &amp; Search Property">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -3665,7 +3665,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
             </JSR223PostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MDMS PropertyTax" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MDMS PropertyTax">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/egov-mdms-service/v1/_search?tenantId=${state_tenant}.${city_tenant}</stringProp>
@@ -3733,7 +3733,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="OccupancyType" enabled="true">
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="OccupancyType">
               <stringProp name="JSONPostProcessor.referenceNames">OccupancyType</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.MdmsRes.PropertyTax.OccupancyType[*]</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
