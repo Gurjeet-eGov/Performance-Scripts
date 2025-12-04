@@ -49,7 +49,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -86,7 +86,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table">
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -160,7 +160,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -197,7 +197,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="true">
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder">
         <stringProp name="ProxyControlGui.port">8888</stringProp>
         <collectionProp name="ProxyControlGui.exclude_list">
           <stringProp name="1538321533">.*google-analytics\.com.*</stringProp>
@@ -488,7 +488,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Tenant CSV Config">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Tenant CSV Config" enabled="true">
           <stringProp name="filename">/home/moolya/Documents/eGov/Performance-Scripts/Unified Demo/files/tenant_export.csv</stringProp>
           <stringProp name="fileEncoding">UTF-8</stringProp>
           <stringProp name="variableNames">Tenant</stringProp>
@@ -3022,7 +3022,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login/mdms-v2/v1/_search?tenantId=DEFAULT-622">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login/mdms-v2/v1/_search?tenantId=DEFAULT-622" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -3547,7 +3547,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Landing page">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Landing page" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -3878,7 +3878,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LandingPage/user/_search-723">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LandingPage/user/_search-723" enabled="true">
             <stringProp name="HTTPSampler.domain">sandbox.digit.org</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -8648,7 +8648,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;UserRequest&quot;))</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LandingPage/d001d4b9b259c4cf601a537ded327c7d/manifest/video.m3u8-819">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LandingPage/d001d4b9b259c4cf601a537ded327c7d/manifest/video.m3u8-819" enabled="true">
             <stringProp name="HTTPSampler.domain">customer-xtzu9cz29fvhfxys.cloudflarestream.com</stringProp>
             <stringProp name="HTTPSampler.port">443</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
