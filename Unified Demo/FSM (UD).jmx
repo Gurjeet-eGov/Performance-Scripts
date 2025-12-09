@@ -6,6 +6,8 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Login Variables">
@@ -48,7 +50,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -451,7 +453,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group: FSM">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group: FSM" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -462,7 +464,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="FSM Variables">
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="FSM Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
             <elementProp name="mobileNumber" elementType="Argument">
               <stringProp name="Argument.name">mobileNumber</stringProp>
@@ -477,7 +479,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
           </collectionProp>
         </Arguments>
         <hashTree/>
-        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -630,7 +632,7 @@ props.put(&quot;ReqInfo&quot;, vars.get(&quot;ReqInfo&quot;))</stringProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/egov-location/_search (REVENUE - Locality)">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/egov-location/_search (REVENUE - Locality)" enabled="false">
             <stringProp name="HTTPSampler.domain">${URL}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&amp;boundaryType=Locality&amp;tenantId=${state_tenant}.${city_tenant}</stringProp>
@@ -760,7 +762,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Accept</stringProp>
@@ -790,7 +792,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
             <hashTree/>
           </hashTree>
           <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
-            <stringProp name="ConstantTimer.delay">20</stringProp>
+            <stringProp name="ConstantTimer.delay">500</stringProp>
           </ConstantTimer>
           <hashTree/>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Collect Payment)">
@@ -952,7 +954,7 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/fsm/v1/_search">
               <stringProp name="HTTPSampler.domain">${URL}</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.path">/fsm/v1/_search?tenantId=${state_tenant}.${city_tenant}&amp;applicationNumber=${applicationNo}</stringProp>
+              <stringProp name="HTTPSampler.path">/fsm/v1/_search?tenantId=${state_tenant}.${city_tenant}&amp;applicationNos=${applicationNo}</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1016,9 +1018,150 @@ vars.put(&quot;boundaryName&quot;, json.name ?: &quot;&quot;)
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-    &quot;WaterConnection&quot;: ${modifiedPropertyPayload},&#xd;
+    &quot;fsm&quot;: ${modifiedPropertyPayload},&#xd;
     &quot;workflow&quot;: {&#xd;
     &quot;action&quot;: &quot;ASSIGN&quot;&#xd;
+  	},&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
+        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
+        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
+        &quot;plainAccessRequest&quot;: {}&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+// 1. Read the saved JSON string from JMeter variable
+def originalJson = vars.get(&quot;fsm&quot;)
+
+// 2. Parse JSON into an object so we can work with it
+def obj = new JsonSlurper().parseText(originalJson)
+
+obj.dsoId = &quot;5fba00d0-96e8-435f-b714-9bb8c050882e&quot;
+obj.possibleServiceDate = 1765238400000
+obj.applicationStatus = &quot;ASSING_DSO&quot;
+
+
+// 4. Convert back into JSON string
+def newJson = JsonOutput.toJson(obj)
+
+// 5. Save into a new JMeter variable
+vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
+</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223PreProcessor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Assign Vehicle)">
+            <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/fsm/v1/_search">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/fsm/v1/_search?tenantId=${state_tenant}.${city_tenant}&amp;applicationNos=${applicationNo}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;RequestInfo&quot;: {&#xd;
+        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
+        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
+        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
+        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
+        &quot;plainAccessRequest&quot;: {}&#xd;
+    }&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">https://${URL}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="fsm" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">fsm</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.fsm[0]</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">fsm NOT FOUND</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/fsm/v1/_update">
+              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.path">/fsm/v1/_update?tenantId=${state_tenant}.${city_tenant}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+    &quot;fsm&quot;: ${modifiedPropertyPayload},&#xd;
+    &quot;workflow&quot;: {&#xd;
+    &quot;action&quot;: &quot;DSO_ACCEPT&quot;&#xd;
   	},&#xd;
     &quot;RequestInfo&quot;: {&#xd;
         &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
@@ -1068,8 +1211,15 @@ def originalJson = vars.get(&quot;fsm&quot;)
 // 2. Parse JSON into an object so we can work with it
 def obj = new JsonSlurper().parseText(originalJson)
 
-obj.dsoId = &quot;5fba00d0-96e8-435f-b714-9bb8c050882e&quot;
-obj.possibleServiceDate = 1765238400000
+obj.vehicleId = &quot;9e41d4d3-1b1d-43ea-8b82-ecbc3101bb61&quot;
+obj.workers = [[
+  &quot;tenantId&quot;: &quot;pg.citya&quot;,
+  &quot;applicationId&quot;: &quot;9562d46f-a632-47fe-b638-3c1040f29a19&quot;,
+  &quot;individualId&quot;: &quot;7a1c5a62-1698-4585-adb1-8d68309fa93b&quot;,
+  &quot;workerType&quot;: &quot;DRIVER&quot;,
+  &quot;status&quot;: &quot;ACTIVE&quot;
+]]
+obj.applicationStatus = &quot;PENDING_DSO_APPROVAL&quot;
 
 
 // 4. Convert back into JSON string
@@ -1083,16 +1233,16 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
               <hashTree/>
             </hashTree>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Doc Verify)" enabled="false">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Update Trips)">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/ws-services/wc/_search" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/fsm/v1/_search" enabled="true">
               <stringProp name="HTTPSampler.domain">${URL}</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.path">/ws-services/wc/_search?tenantId=${state_tenant}.${city_tenant}&amp;applicationNumber=${applicationNo}</stringProp>
+              <stringProp name="HTTPSampler.path">/fsm/v1/_search?tenantId=${state_tenant}.${city_tenant}&amp;applicationNos=${applicationNo}</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1136,18 +1286,18 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="WaterConnections" enabled="true">
-                <stringProp name="JSONPostProcessor.referenceNames">WaterConnections</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.WaterConnection[0]</stringProp>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="fsm" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">fsm</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.fsm[0]</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">WaterConnections NOT FOUND</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">fsm NOT FOUND</stringProp>
               </JSONPostProcessor>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/ws-services/wc/_update" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/fsm/v1/_update">
               <stringProp name="HTTPSampler.domain">${URL}</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.path">/ws-services/wc/_update</stringProp>
+              <stringProp name="HTTPSampler.path">/fsm/v1/_update?tenantId=${state_tenant}.${city_tenant}</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1156,7 +1306,10 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-    &quot;WaterConnection&quot;: ${modifiedPropertyPayload},&#xd;
+    &quot;fsm&quot;: ${modifiedPropertyPayload},&#xd;
+    &quot;workflow&quot;: {&#xd;
+    &quot;action&quot;: &quot;UPDATE&quot;&#xd;
+  	},&#xd;
     &quot;RequestInfo&quot;: {&#xd;
         &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
         &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
@@ -1192,7 +1345,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
                 <stringProp name="cacheKey">true</stringProp>
                 <stringProp name="filename"></stringProp>
                 <stringProp name="parameters"></stringProp>
@@ -1200,15 +1353,27 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
 import groovy.json.JsonOutput
 
 // 1. Read the saved JSON string from JMeter variable
-def originalJson = vars.get(&quot;WaterConnections&quot;)
+def originalJson = vars.get(&quot;fsm&quot;)
 
 // 2. Parse JSON into an object so we can work with it
 def obj = new JsonSlurper().parseText(originalJson)
 
-obj.processInstance.action = &quot;VERIFY_AND_FORWARD&quot;
-obj.serviceType = &quot;WATER&quot;
-obj.action = &quot;VERIFY_AND_FORWARD&quot;
-
+obj.applicationStatus = &quot;DSO_INPROGRESS&quot;
+obj.workers = [[
+      &quot;id&quot;: &quot;38956f98-66e8-4bee-b712-c796e223b8a6&quot;,
+      &quot;tenantId&quot;: &quot;pg.citya&quot;,
+      &quot;applicationId&quot;: &quot;9562d46f-a632-47fe-b638-3c1040f29a19&quot;,
+      &quot;individualId&quot;: &quot;7a1c5a62-1698-4585-adb1-8d68309fa93b&quot;,
+      &quot;workerType&quot;: &quot;DRIVER&quot;,
+      &quot;status&quot;: &quot;ACTIVE&quot;,
+      &quot;additionalDetails&quot;: null,
+      &quot;auditDetails&quot;: [
+        &quot;createdBy&quot;: &quot;93cf696f-88fb-4333-9478-58ad8f784289&quot;,
+        &quot;lastModifiedBy&quot;: &quot;93cf696f-88fb-4333-9478-58ad8f784289&quot;,
+        &quot;createdTime&quot;: 1765277997411,
+        &quot;lastModifiedTime&quot;: 1765277997411
+      ]
+    ]]
 
 // 4. Convert back into JSON string
 def newJson = JsonOutput.toJson(obj)
@@ -1221,308 +1386,20 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
               <hashTree/>
             </hashTree>
           </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Field Inspection)" enabled="false">
-            <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
-            <boolProp name="IfController.evaluateAll">false</boolProp>
-            <boolProp name="IfController.useExpression">true</boolProp>
-          </IfController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/ws-services/wc/_search" enabled="true">
-              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.path">/ws-services/wc/_search?tenantId=${state_tenant}.${city_tenant}&amp;applicationNumber=${applicationNo}</stringProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.value">{&#xd;
-    &quot;RequestInfo&quot;: {&#xd;
-        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
-        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
-        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
-        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
-        &quot;plainAccessRequest&quot;: {}&#xd;
-    }&#xd;
-}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">https://${URL}</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="WaterConnections" enabled="true">
-                <stringProp name="JSONPostProcessor.referenceNames">WaterConnections</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.WaterConnection[0]</stringProp>
-                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">WaterConnections NOT FOUND</stringProp>
-              </JSONPostProcessor>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/ws-services/wc/_update" enabled="true">
-              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.path">/ws-services/wc/_update</stringProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.value">{&#xd;
-    &quot;WaterConnection&quot;: ${modifiedPropertyPayload},&#xd;
-    &quot;RequestInfo&quot;: {&#xd;
-        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
-        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
-        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
-        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
-        &quot;plainAccessRequest&quot;: {}&#xd;
-    }&#xd;
-}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">https://${URL}</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
-                <stringProp name="cacheKey">true</stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="script">import groovy.json.JsonSlurper
-import groovy.json.JsonOutput
-
-// 1. Read the saved JSON string from JMeter variable
-def originalJson = vars.get(&quot;WaterConnections&quot;)
-
-// 2. Parse JSON into an object so we can work with it
-def obj = new JsonSlurper().parseText(originalJson)
-
-obj.action = &quot;VERIFY_AND_FORWARD&quot;
-obj.serviceType = &quot;WATER&quot;
-obj.proposedPipeSize = 0.4
-obj.proposedTaps = 4
-obj.pipeSize = 0.25
-obj.noOfTaps = &quot;2&quot;
-obj.additionalDetails.detailsProvidedBy = &quot;Self&quot;
-obj.waterSource = &quot;GROUND.WELL&quot;
-obj.sourceSubData = &quot;GROUND.WELL&quot;
-obj.plumberInfo = []
-obj.roadCuttingInfo = [
-  [
-    &quot;roadType&quot;: &quot;RD1&quot;,
-    &quot;roadCuttingArea&quot;: &quot;20&quot;
-  ]
-]
-
-
-// 4. Convert back into JSON string
-def newJson = JsonOutput.toJson(obj)
-
-// 5. Save into a new JMeter variable
-vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
-</stringProp>
-                <stringProp name="scriptLanguage">groovy</stringProp>
-              </JSR223PreProcessor>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Approve)" enabled="false">
-            <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
-            <boolProp name="IfController.evaluateAll">false</boolProp>
-            <boolProp name="IfController.useExpression">true</boolProp>
-          </IfController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/ws-services/wc/_search" enabled="true">
-              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.path">/ws-services/wc/_search?tenantId=${state_tenant}.${city_tenant}&amp;applicationNumber=${applicationNo}</stringProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.value">{&#xd;
-    &quot;RequestInfo&quot;: {&#xd;
-        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
-        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
-        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
-        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
-        &quot;plainAccessRequest&quot;: {}&#xd;
-    }&#xd;
-}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">https://${URL}</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="WaterConnections" enabled="true">
-                <stringProp name="JSONPostProcessor.referenceNames">WaterConnections</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.WaterConnection[0]</stringProp>
-                <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">WaterConnections NOT FOUND</stringProp>
-              </JSONPostProcessor>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/ws-services/wc/_update" enabled="true">
-              <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.path">/ws-services/wc/_update</stringProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.value">{&#xd;
-    &quot;WaterConnection&quot;: ${modifiedPropertyPayload},&#xd;
-    &quot;RequestInfo&quot;: {&#xd;
-        &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
-        &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
-        &quot;userInfo&quot;: ${__P(ReqInfo)},&#xd;
-        &quot;msgId&quot;: &quot;1757668283442|en_IN&quot;,&#xd;
-        &quot;plainAccessRequest&quot;: {}&#xd;
-    }&#xd;
-}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">https://${URL}/digit-ui/employee/pt/response</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">https://${URL}</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
-                <stringProp name="cacheKey">true</stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="script">import groovy.json.JsonSlurper
-import groovy.json.JsonOutput
-
-// 1. Read the saved JSON string from JMeter variable
-def originalJson = vars.get(&quot;WaterConnections&quot;)
-
-// 2. Parse JSON into an object so we can work with it
-def obj = new JsonSlurper().parseText(originalJson)
-
-obj.processInstance.action = &quot;APPROVE_FOR_CONNECTION&quot;
-obj.action = &quot;APPROVE_FOR_CONNECTION&quot;
-obj.serviceType = &quot;WATER&quot;
-
-// 4. Convert back into JSON string
-def newJson = JsonOutput.toJson(obj)
-
-// 5. Save into a new JMeter variable
-vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
-</stringProp>
-                <stringProp name="scriptLanguage">groovy</stringProp>
-              </JSR223PreProcessor>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
-            <stringProp name="ConstantTimer.delay">1000</stringProp>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+            <stringProp name="ConstantTimer.delay">500</stringProp>
           </ConstantTimer>
           <hashTree/>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Activate)" enabled="false">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller (Complete Request)">
             <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
             <boolProp name="IfController.useExpression">true</boolProp>
           </IfController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/ws-services/wc/_search" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/fsm/v1/_search">
               <stringProp name="HTTPSampler.domain">${URL}</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.path">/ws-services/wc/_search?tenantId=${state_tenant}.${city_tenant}&amp;applicationNumber=${applicationNo}</stringProp>
+              <stringProp name="HTTPSampler.path">/fsm/v1/_search?tenantId=${state_tenant}.${city_tenant}&amp;applicationNos=${applicationNo}</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1566,18 +1443,18 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="WaterConnections" enabled="true">
-                <stringProp name="JSONPostProcessor.referenceNames">WaterConnections</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.WaterConnection[0]</stringProp>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="fsm" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">fsm</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.fsm[0]</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">WaterConnections NOT FOUND</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">fsm NOT FOUND</stringProp>
               </JSONPostProcessor>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/ws-services/wc/_update" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/fsm/v1/_update">
               <stringProp name="HTTPSampler.domain">${URL}</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.path">/ws-services/wc/_update</stringProp>
+              <stringProp name="HTTPSampler.path">/fsm/v1/_update?tenantId=${state_tenant}.${city_tenant}</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1586,7 +1463,10 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-    &quot;WaterConnection&quot;: ${modifiedPropertyPayload},&#xd;
+    &quot;fsm&quot;: ${modifiedPropertyPayload},&#xd;
+    &quot;workflow&quot;: {&#xd;
+    &quot;action&quot;: &quot;COMPLETED&quot;&#xd;
+  	},&#xd;
     &quot;RequestInfo&quot;: {&#xd;
         &quot;apiId&quot;: &quot;Rainmaker&quot;,&#xd;
         &quot;authToken&quot;: &quot;${__P(authToken)}&quot;,&#xd;
@@ -1601,7 +1481,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">Accept</stringProp>
@@ -1622,7 +1502,7 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
                 <stringProp name="cacheKey">true</stringProp>
                 <stringProp name="filename"></stringProp>
                 <stringProp name="parameters"></stringProp>
@@ -1630,15 +1510,29 @@ vars.put(&quot;modifiedPropertyPayload&quot;, newJson)
 import groovy.json.JsonOutput
 
 // 1. Read the saved JSON string from JMeter variable
-def originalJson = vars.get(&quot;WaterConnections&quot;)
+def originalJson = vars.get(&quot;fsm&quot;)
 
 // 2. Parse JSON into an object so we can work with it
 def obj = new JsonSlurper().parseText(originalJson)
 
-obj.connectionExecutionDate = 1762021799000
-obj.processInstance.action = &quot;ACTIVATE_CONNECTION&quot;
-obj.serviceType = &quot;WATER&quot;
-obj.action = &quot;ACTIVATE_CONNECTION&quot;
+obj.applicationStatus = &quot;DSO_INPROGRESS&quot;
+obj.completedOn = 1765238400000
+obj.wasteCollected = 1000
+obj.workers = [[
+      &quot;id&quot;: &quot;38956f98-66e8-4bee-b712-c796e223b8a6&quot;,
+      &quot;tenantId&quot;: &quot;pg.citya&quot;,
+      &quot;applicationId&quot;: &quot;9562d46f-a632-47fe-b638-3c1040f29a19&quot;,
+      &quot;individualId&quot;: &quot;7a1c5a62-1698-4585-adb1-8d68309fa93b&quot;,
+      &quot;workerType&quot;: &quot;DRIVER&quot;,
+      &quot;status&quot;: &quot;ACTIVE&quot;,
+      &quot;additionalDetails&quot;: null,
+      &quot;auditDetails&quot;: [
+        &quot;createdBy&quot;: &quot;93cf696f-88fb-4333-9478-58ad8f784289&quot;,
+        &quot;lastModifiedBy&quot;: &quot;93cf696f-88fb-4333-9478-58ad8f784289&quot;,
+        &quot;createdTime&quot;: 1765277997411,
+        &quot;lastModifiedTime&quot;: 1765277997411
+      ]
+    ]]
 
 // 4. Convert back into JSON string
 def newJson = JsonOutput.toJson(obj)
